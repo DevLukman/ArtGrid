@@ -33,7 +33,7 @@ function Nav() {
         ref={navRef}
       >
         <header className="absolute h-16 w-full overflow-hidden border border-b-[#000] bg-white">
-          <nav className="app-container absolute top-1/2 hidden w-full -translate-y-1/2 items-center justify-between lg:flex">
+          <nav className="absolute top-1/2 hidden w-full -translate-y-1/2 items-center justify-between px-[2.45rem] lg:flex">
             <div>
               <Link
                 to="/"
@@ -43,7 +43,9 @@ function Nav() {
               </Link>
             </div>
             <form
-              className={`flex items-center rounded-md border transition-all duration-100 ${!activeInput && "border-gray-300"} px-2 ${activeInput && "border border-[#000]"}`}
+              className={`flex items-center rounded-md border transition-all duration-100 ${
+                !activeInput && "border-[#dcdcdc]"
+              } px-2 ${activeInput && "border border-[#000]"}`}
               onSubmit={(e) => e.preventDefault()}
               onClick={() => setActiveInput(true)}
             >
@@ -59,7 +61,7 @@ function Nav() {
                 ""
               ) : (
                 <HiOutlineXMark
-                  className="cursor-pointer rounded-full border border-gray-300 text-gray-500"
+                  className="cursor-pointer rounded-full border border-[#dcdcdc] text-gray-500"
                   onClick={() => setInput("")}
                 />
               )}

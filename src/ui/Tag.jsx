@@ -6,8 +6,9 @@ const tags = [
   { id: 3, tag: "illustration", query: "" },
   { id: 4, tag: "photography", query: "" },
   { id: 5, tag: "painting", query: "" },
-  { id: 6, tag: "drawing", query: "" },
-  { id: 7, tag: "scultpure", query: "" },
+  { id: 6, tag: "digital art", query: "" },
+  { id: 7, tag: "drawing", query: "" },
+  { id: 8, tag: "scultpure", query: "" },
 ];
 /* eslint-disable react/prop-types */
 function Tag({ holder }) {
@@ -27,9 +28,9 @@ function Tag({ holder }) {
         >
           <h1 className="uppercase text-gray-400">Tags</h1>
           <div className="mt-5 grid grid-cols-3 gap-2">
-            {tags.map((tag, index) => (
+            {tags.map((tag) => (
               <Link
-                key={index}
+                key={tag.id}
                 className="rounded-[4px] border border-gray-400 px-2 text-center transition-all duration-200 ease-in-out hover:border-[#000]"
               >
                 {tag.tag}

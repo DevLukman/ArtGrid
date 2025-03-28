@@ -5,8 +5,10 @@ import { useScrollNav } from "../hooks/useScrollNav";
 import { useEffect, useState } from "react";
 import MobileNavLinks from "./MobileNavLinks";
 import { FaXmark } from "react-icons/fa6";
+import MobileSearch from "./MobileSearch";
 function MobileNav() {
   const [openNavbar, setOpenNavbar] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const navRef = useScrollNav();
   useEffect(
     function () {
@@ -34,11 +36,21 @@ function MobileNav() {
               </Link>
             </div>
             <div className="flex items-center gap-2">
-              <CiSearch
-                className="rounded border border-gray-200 px-1 py-1"
-                size="1.8rem"
-                cursor="pointer"
-              />
+              {searchOpen ? (
+                <FaXmark
+                  onClick={() => setSearchOpen(!searchOpen)}
+                  cursor="pointer"
+                  className="rounded border bg-gray-200 px-1 py-1 transition-all duration-150 ease-in-out"
+                  size="1.8rem"
+                />
+              ) : (
+                <CiSearch
+                  className="rounded border border-gray-200 px-1 py-1"
+                  size="1.8rem"
+                  cursor="pointer"
+                  onClick={() => setSearchOpen(!searchOpen)}
+                />
+              )}
               {openNavbar ? (
                 <FaXmark
                   onClick={() => setOpenNavbar(!openNavbar)}
@@ -59,6 +71,7 @@ function MobileNav() {
         </header>
       </div>
       {openNavbar && <MobileNavLinks />}
+      {searchOpen && <MobileSearch />}
     </>
   );
 }

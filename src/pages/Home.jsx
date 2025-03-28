@@ -1,12 +1,15 @@
+import FeaturedSection from "../features/HomePage/FeaturedSection";
 import HeroSection from "../features/HomePage/HeroSection";
 import BottomNav from "../ui/BottomNav";
+import Footer from "../ui/Footer";
 
 function Home() {
   return (
     <>
       <HeroSection />
       <BottomNav />
-      <div className="h-screen w-full"></div>
+      <FeaturedSection />
+      <Footer />
     </>
   );
 }
