@@ -1,15 +1,17 @@
-import FeaturedSection from "../features/HomePage/FeaturedSection";
+import CategorySection from "../features/HomePage/CategorySection";
+import FeaturedOne from "../features/HomePage/FeaturedOne";
+import FeaturedTwo from "../features/HomePage/FeaturedTwo";
 import HeroSection from "../features/HomePage/HeroSection";
 import BottomNav from "../ui/BottomNav";
-import Footer from "../ui/Footer";
 
 function Home() {
   return (
     <>
       <HeroSection />
       <BottomNav />
-      <FeaturedSection />
-      <Footer />
+      <CategorySection />
+      <FeaturedOne />
+      <FeaturedTwo />
     </>
   );
 }
