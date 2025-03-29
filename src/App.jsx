@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Nav from "./ui/Nav";
 import MobileNav from "./ui/MobileNav";
 import Footer from "./ui/Footer";
+import Product from "./pages/Product";
 function App() {
   return (
     <BrowserRouter>
@@ -10,6 +11,7 @@ function App() {
       <MobileNav />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="product" element={<Product />} />
       </Routes>
       <Footer />
     </BrowserRouter>

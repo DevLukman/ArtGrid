@@ -25,7 +25,7 @@ const STAGGER = 0.05;
 
 function Footer() {
   return (
-    <footer className="mt-[50px] w-full border-t border-[#dcdcdc] bg-[#fafafa] px-12 pb-16 lg:pb-6">
+    <footer className="mt-[50px] w-full border-t border-[#dcdcdc] bg-[#fafafa] px-12 pb-6">
       <div className="mb-6 flex flex-col items-start pt-10 lg:flex-row lg:justify-between">
         <div className="relative flex flex-col gap-2">
           {footerContent1.map((content, index) => (

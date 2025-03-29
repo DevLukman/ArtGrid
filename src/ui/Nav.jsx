@@ -72,7 +72,7 @@ function Nav() {
                   <NavLink>Artists</NavLink>
                 </li>
                 <li className="text-xs font-medium uppercase">
-                  <NavLink>Explore</NavLink>
+                  <NavLink to="/product">Explore</NavLink>
                 </li>
                 <li className="text-xs font-medium uppercase">
                   <NavLink>Archive</NavLink>
