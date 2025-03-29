@@ -55,7 +55,7 @@ function FeaturedTwo() {
               key={content.id}
               className="py-2 transition-all duration-300 ease-in-out hover:scale-[1.01]"
             >
-              <img src={content.image} alt={content.price} loading="lazy" />
+              <img src={content.image} alt={content.price} />
               <div>
                 <p className="mt-1 text-xs uppercase">{content.itemName}</p>
                 <p className="mt-1 text-xs uppercase">

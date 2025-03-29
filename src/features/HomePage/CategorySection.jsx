@@ -44,7 +44,7 @@ function CategorySection() {
             key={content.id}
             className="p-1 transition-all duration-300 ease-in-out hover:scale-[1.01]"
           >
-            <img src={content.image} alt={content.tag} loading="lazy" />
+            <img src={content.image} alt={content.tag} />
             <p className="mt-1 text-base uppercase">{content.tag}</p>
           </Link>
         ))}

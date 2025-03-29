@@ -21,7 +21,7 @@ const footerContent3 = [
 ];
 const footerAni = ["Art Grid"];
 const DURATION = 0.7;
-const STAGGER = 0.1;
+const STAGGER = 0.05;
 
 function Footer() {
   return (
