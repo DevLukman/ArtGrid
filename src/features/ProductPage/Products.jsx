@@ -54,8 +54,6 @@ import { formatCurrency } from "../../utils/helpers";
 import { useState } from "react";
 import { IoBagAddOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
-import Nav from "../../ui/Nav";
-import MobileNav from "../../ui/MobileNav";
 const products = [
   {
     id: 1,
@@ -119,8 +117,6 @@ function Products() {
   const [gridList, setGridList] = useState(true);
   return (
     <>
-      <Nav />
-      <MobileNav />
       <section className="w-full pb-16">
         <div className="app-container w-full pt-[100px]">
           <div className="flex w-full items-center justify-end gap-4">

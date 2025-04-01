@@ -1,11 +1,6 @@
-import MobileNav from "../../ui/MobileNav";
-import Nav from "../../ui/Nav";
-
 function HeroSection() {
   return (
     <>
-      <Nav />
-      <MobileNav />
       <section className="relative h-screen w-full overflow-hidden">
         <div>
           <video

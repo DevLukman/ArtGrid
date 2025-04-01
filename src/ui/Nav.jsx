@@ -91,7 +91,9 @@ function Nav() {
             </div>
             <div className="flex items-center gap-4">
               <FaRegUserCircle size="1.3rem" cursor="pointer" />
-              <Link className="text-xl font-medium">Cart(0)</Link>
+              <Link to="/cart" className="text-xl font-medium">
+                Cart(0)
+              </Link>
             </div>
           </nav>
         </header>

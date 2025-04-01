@@ -10,7 +10,10 @@ function BottomNav() {
           >
             Featured
           </Link>
-          <Link className="flex-grow border py-1 text-center text-base font-normal uppercase">
+          <Link
+            to="/cart"
+            className="flex-grow border py-1 text-center text-base font-normal uppercase"
+          >
             Cart (0)
           </Link>
           <Link

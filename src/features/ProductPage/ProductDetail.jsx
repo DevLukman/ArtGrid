@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { formatCurrency } from "../../utils/helpers";
 import Nav from "../../ui/Nav";
 import MobileNav from "../../ui/MobileNav";
+
+import { IoIosArrowRoundBack } from "react-icons/io";
 const featuredContent = [
   {
     id: 1,
@@ -28,6 +30,7 @@ const featuredContent = [
 ];
 
 function ProductDetail() {
+  const navigate = useNavigate();
   return (
     <>
       <Nav />
@@ -55,6 +58,22 @@ function ProductDetail() {
               </p>
             </div>
           </div>
+        </div>
+        {/* For navigation */}
+        <div>
+          <button
+            className="absolute left-[3%] top-[9%] hidden items-center gap-2 sm:flex"
+            onClick={() => navigate(-1)}
+          >
+            <IoIosArrowRoundBack size="2rem" />
+            Back
+          </button>
+          <button
+            className="absolute left-[3%] top-[12%] flex items-center gap-2 bg-[#fafafa] px-1 py-1 sm:hidden"
+            onClick={() => navigate(-1)}
+          >
+            <IoIosArrowRoundBack size="1rem" />
+          </button>
         </div>
       </section>
       <aside className="app-container">

@@ -14,10 +14,8 @@ const navLinks = [
   { id: 4, name: "Trending", to: "" },
 ];
 const curationLinks = [
-  { id: 1, name: "Private Sales", to: "" },
-  { id: 2, name: "Rare Artworks", to: "" },
-  { id: 3, name: "Trade", to: "" },
-  { id: 4, name: "Art Advisory", to: "" },
+  { id: 1, name: "Private Sales", to: "/privateSales" },
+  { id: 2, name: "Rare Artworks", to: "/rareartwork" },
 ];
 function MobileNavLinks() {
   return (

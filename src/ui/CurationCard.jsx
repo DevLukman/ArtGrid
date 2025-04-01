@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+
 const curationLinks = [
-  "Private Sales",
-  "Rare Artworks",
-  "Trade",
-  "Art Advisory",
+  { id: 1, link: "Private Sales", to: "/privateSales" },
+  { id: 2, link: "Rare Artworks", to: "/rareartwork" },
 ];
 
 function CurationCard() {
@@ -26,12 +25,13 @@ function CurationCard() {
           className="w-[230px] rounded-md border border-[#000] bg-[#fff] px-4 py-4"
         >
           <div className="flex flex-col gap-2">
-            {curationLinks.map((link, index) => (
+            {curationLinks.map((link) => (
               <NavLink
-                key={index}
+                key={link.id}
+                to={link.to}
                 className="w-full rounded px-2 py-2 font-medium duration-100 ease-in-out hover:bg-gray-100"
               >
-                {link}
+                {link.link}
               </NavLink>
             ))}
           </div>

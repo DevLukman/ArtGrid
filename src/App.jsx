@@ -1,19 +1,21 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-// import Nav from "./ui/Nav";
-// import MobileNav from "./ui/MobileNav";
 import Footer from "./ui/Footer";
 import Product from "./pages/Product";
-import ProductDetail from "./features/ProductPage/ProductDetail";
+import ProductDetailsPage from "./pages/ProductDetailsPage";
+import Cart from "./pages/Cart";
+import PrivateSales from "./pages/PrivateSales";
+import RareArtwork from "./pages/RareArtwork";
 function App() {
   return (
     <BrowserRouter>
-      {/* <Nav />
-      <MobileNav /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="product" element={<Product />} />
-        <Route path="detail" element={<ProductDetail />} />
+        <Route path="detail" element={<ProductDetailsPage />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="privateSales" element={<PrivateSales />} />
+        <Route path="rareartwork" element={<RareArtwork />} />
       </Routes>
       <Footer />
     </BrowserRouter>
