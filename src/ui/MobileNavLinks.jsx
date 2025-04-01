@@ -8,9 +8,9 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 const navLinks = [
-  { id: 1, name: "Artists", to: "" },
-  { id: 2, name: "Explore", to: "/product" },
-  { id: 3, name: "Archive", to: "" },
+  { id: 1, name: "Home", to: "/" },
+  { id: 2, name: "Artists", to: "" },
+  { id: 3, name: "Explore", to: "/product" },
   { id: 4, name: "Trending", to: "" },
 ];
 const curationLinks = [

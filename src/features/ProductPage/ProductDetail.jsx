@@ -49,7 +49,7 @@ function ProductDetail() {
               </button>
             </div>
             <div className="mt-[40px] border-t border-[#dcdcdc] py-4">
-              <h2 className="font-medium">Description:</h2>
+              <h2 className="font-medium">Details:</h2>
               <p className="mt-[10px] text-base font-normal">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit,
                 sed eligendi obcaecati nam quos voluptatum neque incidunt

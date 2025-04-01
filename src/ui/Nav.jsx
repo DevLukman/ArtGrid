@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import CurationCard from "./CurationCard";
 import Tag from "./Tag";
 import { useEffect, useState } from "react";
@@ -9,7 +9,7 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { AnimatePresence } from "framer-motion";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import { useScrollNav } from "../hooks/useScrollNav";
-// import { FaXmark } from "react-icons/fa6";
+import NavList from "./NavList";
 
 function Nav() {
   const [input, setInput] = useState("");
@@ -66,28 +66,16 @@ function Nav() {
                 />
               )}
             </form>
-            <div>
-              <ul className="flex items-center gap-6">
-                <li className="text-xs font-medium uppercase">
-                  <NavLink>Artists</NavLink>
-                </li>
-                <li className="text-xs font-medium uppercase">
-                  <NavLink to="/product">Explore</NavLink>
-                </li>
-                <li className="text-xs font-medium uppercase">
-                  <NavLink>Archive</NavLink>
-                </li>
-                <li className="text-xs font-medium uppercase">
-                  <NavLink>Trending</NavLink>
-                </li>
-                <li
-                  className="flex cursor-pointer items-center gap-1 text-xs font-medium uppercase"
-                  onClick={() => setOpenCuration((close) => !close)}
-                >
-                  <span>Curation</span>
-                  {openCuration ? <IoIosArrowUp /> : <IoIosArrowDown />}
-                </li>
-              </ul>
+            <div className="flex items-center gap-6">
+              {/*  */}
+              <NavList />
+              <div
+                className="flex cursor-pointer items-center gap-1 text-xs font-medium uppercase"
+                onClick={() => setOpenCuration((close) => !close)}
+              >
+                <span>Curation</span>
+                {openCuration ? <IoIosArrowUp /> : <IoIosArrowDown />}
+              </div>
             </div>
             <div className="flex items-center gap-4">
               <FaRegUserCircle size="1.3rem" cursor="pointer" />
