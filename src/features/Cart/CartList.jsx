@@ -29,7 +29,7 @@ const cartContent = [
     itemName: "init",
   },
 ];
-
+import { AnimatePresence } from "framer-motion";
 import CartItems from "./CartItems";
 import CartInformation from "./CartInformation";
 import EmptyCart from "../../ui/EmptyCart";
@@ -42,7 +42,9 @@ function CartList() {
     <section className="relative w-full">
       <div className="app-container relative flex w-full flex-col gap-6 pt-[120px] lg:flex-row">
         {cartContent.length > 0 ? (
-          <CartItems cartContent={cartContent} />
+          <AnimatePresence>
+            <CartItems cartContent={cartContent} />
+          </AnimatePresence>
         ) : (
           <EmptyCart />
         )}

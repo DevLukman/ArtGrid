@@ -11,7 +11,6 @@ const navLinks = [
   { id: 1, name: "Home", to: "/" },
   { id: 2, name: "Artists", to: "/artist" },
   { id: 3, name: "Explore", to: "/product" },
-  { id: 4, name: "Trending", to: "" },
 ];
 const curationLinks = [
   { id: 1, name: "Private Sales", to: "/privateSales" },

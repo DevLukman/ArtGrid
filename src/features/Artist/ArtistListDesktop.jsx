@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 /* eslint-disable react/prop-types */
 function ArtistListDesktop({ artists }) {
-  const [imageShow, setImageShow] = useState(1);
+  const [imageShow, setImageShow] = useState(null);
   function handleMouseEnter(id) {
     setImageShow(id);
   }
@@ -10,7 +10,7 @@ function ArtistListDesktop({ artists }) {
     setImageShow(null);
   }
   return (
-    <div className="relative mt-6 hidden w-full flex-col items-center justify-center gap-4">
+    <div className="relative mt-6 hidden w-full flex-col items-center justify-center gap-4 sm:flex">
       {artists.map((artist) => (
         <div
           className="flex cursor-pointer"

@@ -2,7 +2,13 @@
 import { HiOutlineXMark } from "react-icons/hi2";
 import { formatCurrency } from "../../utils/helpers";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 function CartItems({ cartContent }) {
+  const [items, setItems] = useState(cartContent);
+  function handleDelete(id) {
+    setItems((items) => items.filter((item) => item.id !== id));
+  }
   return (
     <>
       <div className="w-full lg:w-[60%]">
@@ -14,28 +20,37 @@ function CartItems({ cartContent }) {
             <h1>You have X items in your cart.</h1>
           </div>
 
-          {cartContent.map((cart) => (
-            <div
-              key={cart.id}
-              className="flex justify-between border-b border-[#dcdcdc] px-6 py-4"
-            >
-              <div className="flex gap-3">
-                <img
-                  src={cart.image}
-                  alt={cart.itemName}
-                  className="h-[50px] w-[50px] sm:h-[80px] sm:w-[80px]"
-                />
-                <p className="capitalize">{cart.itemName}</p>
-              </div>
-              <div className="flex flex-col justify-between">
-                <HiOutlineXMark
-                  className="flex w-full justify-end text-xl"
-                  cursor="pointer"
-                />
-                <p>{formatCurrency(cart.price)}</p>
-              </div>
-            </div>
-          ))}
+          <AnimatePresence>
+            {items.map((cart) => (
+              <motion.div
+                layout
+                initial={{ opacity: 1 }}
+                exit={{
+                  opacity: 0,
+                  transition: { ease: "linear", duration: 0.5 },
+                }}
+                key={cart.id}
+                className="flex justify-between border-b border-[#dcdcdc] px-6 py-4"
+              >
+                <div className="flex gap-3">
+                  <img
+                    src={cart.image}
+                    alt={cart.itemName}
+                    className="h-[50px] w-[50px] sm:h-[80px] sm:w-[80px]"
+                  />
+                  <p className="capitalize">{cart.itemName}</p>
+                </div>
+                <div className="flex flex-col justify-between">
+                  <HiOutlineXMark
+                    className="flex w-full justify-end text-xl"
+                    cursor="pointer"
+                    onClick={() => handleDelete(cart.id)}
+                  />
+                  <p>{formatCurrency(cart.price)}</p>
+                </div>
+              </motion.div>
+            ))}
+          </AnimatePresence>
           <div className="flex w-full items-center justify-between border-b border-[#dcdcdc] p-6">
             <h2>SUBTOTAL</h2>
             <p>{formatCurrency(4000)}</p>

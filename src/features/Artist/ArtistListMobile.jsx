@@ -1,12 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useWindowScroll } from "react-use";
 /* eslint-disable react/prop-types */
 function ArtistListMobile({ artists }) {
   const [imageShow, setImageShow] = useState(1);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const ref = useRef(null);
-  const { y: scrollY } = useWindowScroll(ref);
+  const { y: scrollY } = useWindowScroll();
   useEffect(
     function () {
       if (scrollY === 0) {
@@ -22,7 +21,7 @@ function ArtistListMobile({ artists }) {
   );
   return (
     <>
-      <div ref={ref} className="relative mt-6 flex w-full flex-col gap-4">
+      <div className="relative mt-6 flex w-full flex-col gap-4 sm:hidden">
         {artists.map((artist) => (
           <div className="flex cursor-pointer" key={artist.id}>
             <motion.div
@@ -36,7 +35,7 @@ function ArtistListMobile({ artists }) {
                   {artist.icon}
                 </span>
               )}
-              <h2 className="text-3xl font-medium capitalize">
+              <h2 className="text-xl font-medium capitalize">
                 {artist.artistName}
               </h2>
             </motion.div>
@@ -44,7 +43,7 @@ function ArtistListMobile({ artists }) {
               <img
                 src={artist.image}
                 alt={artist.artistName}
-                className={`absolute right-[20%] top-[25%] h-[170px] w-[170px] -translate-y-[20%] translate-x-[-20%] object-cover`}
+                className={`absolute right-[5%] top-[25%] h-[170px] w-[170px] object-cover`}
               />
             )}
           </div>

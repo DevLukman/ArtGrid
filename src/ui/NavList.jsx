@@ -4,7 +4,6 @@ const navList = [
   { id: 1, link: "Home", to: "/" },
   { id: 2, link: "Artist", to: "/artist" },
   { id: 3, link: "Explore", to: "/product" },
-  { id: 4, link: "Trending", to: "" },
 ];
 const DURATION = 0.25;
 const STAGGER = 0.025;
