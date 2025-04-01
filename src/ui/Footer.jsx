@@ -74,6 +74,7 @@ function Footer() {
           <motion.p
             initial="initial"
             whileInView="textinview"
+            viewport={{ once: true }}
             className="mt-[35px] w-full text-center text-[12vw] font-extrabold uppercase"
             key={index}
           >
@@ -98,6 +99,7 @@ function Footer() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, ease: "backInOut" }}
+        viewport={{ once: true }}
         className="text-center text-xs font-normal capitalize italic lg:text-right lg:text-base"
       >
         Developed by yours truly: Lukas Flick

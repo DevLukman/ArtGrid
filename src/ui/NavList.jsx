@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 const navList = [
   { id: 1, link: "Home", to: "/" },
-  { id: 2, link: "Artist", to: "" },
+  { id: 2, link: "Artist", to: "/artist" },
   { id: 3, link: "Explore", to: "/product" },
   { id: 4, link: "Trending", to: "" },
 ];

@@ -6,6 +6,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import Cart from "./pages/Cart";
 import PrivateSales from "./pages/PrivateSales";
 import RareArtwork from "./pages/RareArtwork";
+import Artists from "./pages/Artists";
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
         <Route path="cart" element={<Cart />} />
         <Route path="privateSales" element={<PrivateSales />} />
         <Route path="rareartwork" element={<RareArtwork />} />
+        <Route path="artist" element={<Artists />} />
       </Routes>
       <Footer />
     </BrowserRouter>
