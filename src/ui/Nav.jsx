@@ -10,11 +10,13 @@ import { AnimatePresence } from "framer-motion";
 import { useOutsideClick } from "../hooks/useOutsideClick";
 import { useScrollNav } from "../hooks/useScrollNav";
 import NavList from "./NavList";
+import DesktopAuth from "../features/Authentication/DesktopAuth";
 
 function Nav() {
   const [input, setInput] = useState("");
   const [activeInput, setActiveInput] = useState(false);
   const [openCuration, setOpenCuration] = useState(false);
+  const [openAuth, setOpenAuth] = useState(false);
   const navRef = useScrollNav();
   const searchref = useOutsideClick(setActiveInput);
   useEffect(
@@ -78,7 +80,11 @@ function Nav() {
               </div>
             </div>
             <div className="flex items-center gap-4">
-              <FaRegUserCircle size="1.3rem" cursor="pointer" />
+              <FaRegUserCircle
+                size="1.3rem"
+                cursor="pointer"
+                onClick={() => setOpenAuth((c) => !c)}
+              />
               <Link to="/cart" className="text-xl font-medium">
                 Cart(0)
               </Link>
@@ -89,6 +95,7 @@ function Nav() {
 
       {activeInput && <Tag holder={searchref} />}
       <AnimatePresence>{openCuration && <CurationCard />}</AnimatePresence>
+      {openAuth && <DesktopAuth />}
     </>
   );
 }

@@ -7,10 +7,11 @@ import {
   FaXTwitter,
   FaYoutube,
 } from "react-icons/fa6";
+import AuthButton from "../features/Authentication/AuthButton";
 const navLinks = [
   { id: 1, name: "Home", to: "/" },
-  { id: 2, name: "Artists", to: "/artist" },
-  { id: 3, name: "Explore", to: "/product" },
+  { id: 2, name: "Explore", to: "/product" },
+  { id: 3, name: "Artists", to: "/artist" },
 ];
 const curationLinks = [
   { id: 1, name: "Private Sales", to: "/privateSales" },
@@ -20,14 +21,8 @@ function MobileNavLinks() {
   return (
     <div className="fixed inset-0 z-40">
       <div className="app-container z-40 h-screen w-full bg-[#fff] pt-[70px] lg:hidden">
-        <div className="flex items-center justify-between gap-3">
-          <button className="flex-grow rounded bg-[#000] py-2 text-base font-normal uppercase text-white">
-            Login
-          </button>
-          <button className="flex-grow rounded bg-[#000] py-2 text-base font-normal uppercase text-white">
-            SignUp
-          </button>
-        </div>
+        {/*  */}
+        <AuthButton />
         <div className="mt-4 flex flex-col gap-3 border-b border-b-gray-400 pb-4">
           {navLinks.map((link) => (
             <Link
