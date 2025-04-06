@@ -6,8 +6,6 @@ import { CiSearch } from "react-icons/ci";
 import { HiOutlineXMark } from "react-icons/hi2";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { FaRegUserCircle } from "react-icons/fa";
-import { AnimatePresence } from "framer-motion";
-import { useOutsideClick } from "../hooks/useOutsideClick";
 import { useScrollNav } from "../hooks/useScrollNav";
 import NavList from "./NavList";
 import DesktopAuth from "../features/Authentication/DesktopAuth";
@@ -18,20 +16,20 @@ function Nav() {
   const [openCuration, setOpenCuration] = useState(false);
   const [openAuth, setOpenAuth] = useState(false);
   const navRef = useScrollNav();
-  const searchref = useOutsideClick(setActiveInput);
+
   useEffect(
     function () {
-      if (openCuration) {
+      if (openCuration || openAuth) {
         document.body.classList.add("overflow-hidden");
       }
       return () => document.body.classList.remove("overflow-hidden");
     },
-    [openCuration],
+    [openCuration, openAuth],
   );
   return (
     <>
       <div
-        className="fixed inset-x-0 z-50 hidden h-16 transition-all duration-700 lg:block"
+        className="fixed inset-x-0 z-40 hidden h-16 transition-all duration-700 lg:block"
         ref={navRef}
       >
         <header className="absolute h-16 w-full overflow-hidden border border-b-[#000] bg-white">
@@ -93,8 +91,8 @@ function Nav() {
         </header>
       </div>
 
-      {activeInput && <Tag holder={searchref} />}
-      <AnimatePresence>{openCuration && <CurationCard />}</AnimatePresence>
+      {activeInput && <Tag setActiveInput={setActiveInput} />}
+      {openCuration && <CurationCard setOpenCuration={setOpenCuration} />}
       {openAuth && <DesktopAuth />}
     </>
   );

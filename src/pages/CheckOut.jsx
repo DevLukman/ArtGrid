@@ -1,17 +1,17 @@
-import PrivateSalesList from "../features/PrivateSales/PrivateSalesList";
+import CheckOuts from "../features/Checkout/CheckOuts";
 import Footer from "../ui/Footer";
 import MobileNav from "../ui/MobileNav";
 import Nav from "../ui/Nav";
 
-function PrivateSales() {
+function CheckOut() {
   return (
     <>
       <Nav />
       <MobileNav />
-      <PrivateSalesList />
+      <CheckOuts />
       <Footer />
     </>
   );
 }
 
-export default PrivateSales;
+export default CheckOut;

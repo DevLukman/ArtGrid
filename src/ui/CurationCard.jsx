@@ -1,15 +1,18 @@
+/* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useOutsideClick } from "../hooks/useOutsideClick";
 
 const curationLinks = [
   { id: 1, link: "Private Sales", to: "/privateSales" },
   { id: 2, link: "Rare Artworks", to: "/rareartwork" },
 ];
 
-function CurationCard() {
+function CurationCard({ setOpenCuration }) {
+  const closeRef = useOutsideClick(setOpenCuration);
   return (
     <div className="fixed inset-0 z-40">
-      <div className="absolute left-[80%] top-[12%] z-40 -translate-x-[80%]">
+      <div className="absolute left-[80%] z-40 -translate-x-[80%] lg:top-[6%] xl:top-[12%]">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
           animate={{
@@ -23,6 +26,7 @@ function CurationCard() {
             transition: { ease: "easeInOut", duration: 0.3 },
           }}
           className="w-[230px] rounded-md border border-[#000] bg-[#fff] px-4 py-4"
+          ref={closeRef}
         >
           <div className="flex flex-col gap-2">
             {curationLinks.map((link) => (

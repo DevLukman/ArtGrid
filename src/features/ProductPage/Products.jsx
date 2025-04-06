@@ -51,9 +51,11 @@ const ActiveFour = (
 
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/helpers";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoBagAddOutline } from "react-icons/io5";
 import { CiHeart } from "react-icons/ci";
+import Filter from "./Filter";
+import { AnimatePresence } from "framer-motion";
 const products = [
   {
     id: 1,
@@ -115,6 +117,17 @@ const products = [
 
 function Products() {
   const [gridList, setGridList] = useState(true);
+  const [openFilter, setOpenFilter] = useState(false);
+  useEffect(
+    function () {
+      if (openFilter) {
+        document.body.classList.add("overflow-hidden");
+      }
+
+      return () => document.body.classList.remove("overflow-hidden");
+    },
+    [openFilter],
+  );
   return (
     <>
       <section className="w-full pb-16">
@@ -126,8 +139,11 @@ function Products() {
             >
               {gridList ? ActiveFour : ActiveTwo}
             </button>
-            <button className="rounded-xl border border-[#000] px-2 py-2">
-              Filter
+            <button
+              className="rounded-xl border border-[#000] px-2 py-2"
+              onClick={() => setOpenFilter((c) => !c)}
+            >
+              FILTER
             </button>
           </div>
           <div
@@ -159,6 +175,9 @@ function Products() {
           </div>
         </div>
       </section>
+      <AnimatePresence>
+        {openFilter && <Filter setOpenFilter={setOpenFilter} />}
+      </AnimatePresence>
     </>
   );
 }

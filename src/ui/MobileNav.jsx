@@ -22,7 +22,7 @@ function MobileNav() {
   return (
     <>
       <div
-        className="fixed inset-x-0 z-50 h-14 transition-all duration-700 lg:hidden"
+        className="fixed inset-x-0 z-40 h-14 transition-all duration-700 lg:hidden"
         ref={navRef}
       >
         <header className="absolute h-14 w-full overflow-hidden border-2 border-b-[#000] bg-white lg:h-16">

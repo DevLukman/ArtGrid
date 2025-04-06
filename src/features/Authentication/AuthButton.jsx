@@ -1,32 +1,22 @@
-import { useState } from "react";
-import LoginForm from "./LoginForm";
-import SignUpForm from "./SignUpForm";
+import { Link } from "react-router-dom";
 
 function AuthButton() {
-  const [login, setLogin] = useState(false);
-  const [signUp, setSignUp] = useState(false);
   return (
     <>
-      <div className="flex items-center justify-between gap-3">
-        <button
-          className="flex-grow rounded bg-[#000] py-2 text-base font-normal uppercase text-white"
-          onClick={() => {
-            setLogin(true);
-          }}
+      <div className="flex items-center justify-between gap-3 md:flex-col">
+        <Link
+          to="/login"
+          className="w-full flex-grow rounded bg-[#000] py-2 text-center text-base font-normal uppercase text-white"
         >
           Login
-        </button>
-        <button
-          className="flex-grow rounded bg-[#000] py-2 text-base font-normal uppercase text-white"
-          onClick={() => {
-            setSignUp(true);
-          }}
+        </Link>
+        <Link
+          to="/signup"
+          className="w-full flex-grow rounded bg-[#000] py-2 text-center text-base font-normal uppercase text-white"
         >
           SignUp
-        </button>
+        </Link>
       </div>
-      {login && <LoginForm setLogin={setLogin} setSignUp={setSignUp} />}
-      {signUp && <SignUpForm setLogin={setLogin} setSignUp={setSignUp} />}
     </>
   );
 }

@@ -4,6 +4,7 @@ import Nav from "../../ui/Nav";
 import MobileNav from "../../ui/MobileNav";
 
 import { IoIosArrowRoundBack } from "react-icons/io";
+import { IoBagAddOutline } from "react-icons/io5";
 const featuredContent = [
   {
     id: 1,
@@ -44,8 +45,9 @@ function ProductDetail() {
             <h1 className="text-2xl">Ineffable</h1>
             <p className="mt-2">{formatCurrency(1500)}</p>
             <div className="mt-4 w-full">
-              <button className="w-full bg-[#000] py-2 uppercase text-[#fff]">
-                Add to Cart
+              <button className="flex w-full items-center justify-center gap-2 bg-[#000] py-2 text-xs uppercase text-[#fff]">
+                <IoBagAddOutline />
+                <span> Add to Cart</span>
               </button>
             </div>
             <div className="mt-[40px] border-t border-[#dcdcdc] py-4">

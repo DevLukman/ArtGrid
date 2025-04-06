@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useOutsideClick } from "../hooks/useOutsideClick";
 const tags = [
   { id: 1, tag: "abstract", query: "" },
   { id: 2, tag: "art", query: "" },
@@ -11,9 +12,10 @@ const tags = [
   { id: 8, tag: "scultpure", query: "" },
 ];
 /* eslint-disable react/prop-types */
-function Tag({ holder }) {
+function Tag({ setActiveInput }) {
+  const closeRef = useOutsideClick(setActiveInput);
   return (
-    <div className="fixed inset-0 z-40 w-full bg-gray-50/20 backdrop-blur-sm">
+    <div className="fixed inset-0 z-30 w-full bg-gray-50/20 backdrop-blur-sm">
       <div className="mx-auto max-w-screen-lg">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
@@ -23,7 +25,7 @@ function Tag({ holder }) {
             transition: { ease: "easeInOut", duration: 0.3 },
           }}
           exit={{ y: 300, opacity: 0 }}
-          ref={holder}
+          ref={closeRef}
           className="ml-[50px] mt-[75px] min-h-[200px] max-w-[500px] rounded-md border border-[#000000c9] bg-[#fff] px-10 py-8"
         >
           <h1 className="uppercase text-gray-400">Tags</h1>

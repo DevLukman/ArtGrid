@@ -2,13 +2,8 @@
 import { HiOutlineXMark } from "react-icons/hi2";
 import { formatCurrency } from "../../utils/helpers";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 function CartItems({ cartContent }) {
-  const [items, setItems] = useState(cartContent);
-  function handleDelete(id) {
-    setItems((items) => items.filter((item) => item.id !== id));
-  }
   return (
     <>
       <div className="w-full lg:w-[60%]">
@@ -21,7 +16,7 @@ function CartItems({ cartContent }) {
           </div>
 
           <AnimatePresence>
-            {items.map((cart) => (
+            {cartContent.map((cart) => (
               <motion.div
                 layout
                 initial={{ opacity: 1 }}
@@ -36,15 +31,18 @@ function CartItems({ cartContent }) {
                   <img
                     src={cart.image}
                     alt={cart.itemName}
-                    className="h-[50px] w-[50px] sm:h-[80px] sm:w-[80px]"
+                    className="h-[70px] w-[70px] sm:h-[100px] sm:w-[100px]"
                   />
-                  <p className="capitalize">{cart.itemName}</p>
+                  <div className="flex flex-col">
+                    <p className="capitalize">{cart.itemName}</p>
+                    <p className="capitalize">{cart.artist}</p>
+                    <p className="capitalize">{cart.category}</p>
+                  </div>
                 </div>
                 <div className="flex flex-col justify-between">
                   <HiOutlineXMark
                     className="flex w-full justify-end text-xl"
                     cursor="pointer"
-                    onClick={() => handleDelete(cart.id)}
                   />
                   <p>{formatCurrency(cart.price)}</p>
                 </div>
@@ -79,7 +77,10 @@ function CartItems({ cartContent }) {
           </div>
         </div>
         <div className="mt-4 flex w-full items-center justify-center bg-[#fafafa] py-5 lg:relative">
-          <Link className="rounded bg-[#333] px-8 py-2 text-center text-base font-normal uppercase text-[#fff]">
+          <Link
+            to="/checkout"
+            className="rounded bg-[#333] px-8 py-2 text-center text-base font-normal uppercase text-[#fff]"
+          >
             Check out
           </Link>
         </div>

@@ -1,4 +1,5 @@
 import ProductDetail from "../features/ProductPage/ProductDetail";
+import Footer from "../ui/Footer";
 import MobileNav from "../ui/MobileNav";
 import Nav from "../ui/Nav";
 
@@ -8,6 +9,7 @@ function ProductDetailsPage() {
       <Nav />
       <MobileNav />
       <ProductDetail />
+      <Footer />
     </>
   );
 }

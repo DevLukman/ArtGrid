@@ -5,14 +5,26 @@ const cartContent = [
     to: "",
     price: 500,
     itemName: "init",
+    artist: "Flick",
+    category: "drawing",
   },
-  { id: 2, image: "/images/art.jpg", to: "", price: 700, itemName: "init" },
+  {
+    id: 2,
+    image: "/images/art.jpg",
+    to: "",
+    price: 700,
+    itemName: "init",
+    artist: "Flick",
+    category: "drawing",
+  },
   {
     id: 3,
     image: "/images/illustraction.jpg",
     to: "",
     price: 900,
     itemName: "init",
+    artist: "Flick",
+    category: "drawing",
   },
   {
     id: 4,
@@ -20,6 +32,8 @@ const cartContent = [
     to: "",
     price: 1200,
     itemName: "init",
+    artist: "Flick",
+    category: "drawing",
   },
   {
     id: 5,
@@ -27,6 +41,8 @@ const cartContent = [
     to: "",
     price: 1200,
     itemName: "init",
+    artist: "Flick",
+    category: "drawing",
   },
 ];
 import { AnimatePresence } from "framer-motion";

@@ -19,9 +19,8 @@ const curationLinks = [
 ];
 function MobileNavLinks() {
   return (
-    <div className="fixed inset-0 z-40">
-      <div className="app-container z-40 h-screen w-full bg-[#fff] pt-[70px] lg:hidden">
-        {/*  */}
+    <div className="fixed inset-0 z-30">
+      <div className="app-container z-30 h-screen w-full bg-[#fff] pt-[70px] lg:hidden">
         <AuthButton />
         <div className="mt-4 flex flex-col gap-3 border-b border-b-gray-400 pb-4">
           {navLinks.map((link) => (

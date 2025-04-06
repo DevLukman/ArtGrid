@@ -14,6 +14,8 @@ function CartInformation() {
             <img
               src="https://assets.hermes.com/is/image/hermesedito/orange-box?name=orange-box&end"
               alt="The orange box"
+              width="100"
+              height="100"
               className="h-[80px] w-[80px]"
             />
             <p className="text-xs font-normal">

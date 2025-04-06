@@ -3,7 +3,7 @@ import AuthButton from "./AuthButton";
 
 function DesktopAuth() {
   return (
-    <div className="fixed inset-0 z-40">
+    <div className="fixed inset-0 z-30">
       <div className="absolute right-[2%] top-[12%] z-40">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}

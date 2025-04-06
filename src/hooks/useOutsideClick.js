@@ -1,19 +1,19 @@
 import { useEffect, useRef } from "react";
 
-export function useOutsideClick(setActiveInput, capturingPhase = true) {
-  const searchref = useRef();
+export function useOutsideClick(close, capturingPhase = true) {
+  const closeRef = useRef(null);
   useEffect(
     function () {
       function handleClick(e) {
-        if (searchref.current && !searchref.current.contains(e.target)) {
-          setActiveInput(false);
+        if (closeRef.current && !closeRef.current.contains(e.target)) {
+          close();
         }
       }
       document.addEventListener("click", handleClick, capturingPhase);
       return () =>
         document.removeEventListener("click", handleClick, capturingPhase);
     },
-    [capturingPhase, setActiveInput],
+    [capturingPhase, close],
   );
-  return searchref;
+  return closeRef;
 }
