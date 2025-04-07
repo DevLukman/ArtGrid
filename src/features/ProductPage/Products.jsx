@@ -53,7 +53,6 @@ import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/helpers";
 import { useEffect, useState } from "react";
 import { IoBagAddOutline } from "react-icons/io5";
-import { CiHeart } from "react-icons/ci";
 import Filter from "./Filter";
 import { AnimatePresence } from "framer-motion";
 const products = [
@@ -94,7 +93,7 @@ const products = [
   },
   {
     id: 6,
-    image: "/images/product4.jpg",
+    image: "/images/product5.jpg",
     to: "",
     price: 1200,
     itemName: "init",
@@ -166,8 +165,7 @@ function Products() {
                     <p>{formatCurrency(product.price)}</p>
                   </div>
                   <div className="flex items-center gap-2">
-                    <CiHeart size="1.2rem" cursor="pointer" />
-                    <IoBagAddOutline size="1.2rem" cursor="pointer" />
+                    <IoBagAddOutline size="1.5rem" cursor="pointer" />
                   </div>
                 </div>
               </div>

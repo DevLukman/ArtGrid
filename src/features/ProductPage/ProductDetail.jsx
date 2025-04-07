@@ -39,11 +39,13 @@ function ProductDetail() {
       <section className="relative mb-[400px] w-full pb-16 md:mb-[0px]">
         <div className="app-container relative flex w-full flex-col gap-10 pt-[120px] md:flex-row">
           <div className="absolute left-0 top-[10%] w-full md:relative md:top-0 md:w-[55%]">
-            <img src="/images/product1.jpg" className="w-full" />
+            <img src="/images/product5.jpg" className="w-full" />
           </div>
-          <div className="relative top-[380px] w-full md:sticky md:top-[20px] md:h-fit md:w-[45%]">
-            <h1 className="text-2xl">Ineffable</h1>
-            <p className="mt-2">{formatCurrency(1500)}</p>
+          <div className="relative top-[390px] w-full md:sticky md:top-[20px] md:h-fit md:w-[45%]">
+            <div className="mt-2 flex flex-col">
+              <h1 className="text-2xl md:text-2xl">Ineffable</h1>
+              <p>{formatCurrency(1500)}</p>
+            </div>
             <div className="mt-4 w-full">
               <button className="flex w-full items-center justify-center gap-2 bg-[#000] py-2 text-xs uppercase text-[#fff]">
                 <IoBagAddOutline />
