@@ -3,7 +3,7 @@ import { formatCurrency } from "../../utils/helpers";
 const featuredContent = [
   {
     id: 1,
-    image: "/images/abstract.jpg",
+    image: "/images/product2.jpg",
     to: "",
     price: 500,
     itemName: "init",
@@ -37,7 +37,10 @@ function FeaturedOne() {
             From ArtGrid to Albers, the light carries the A through the grid.
           </p>
           <div className="mt-4">
-            <Link className="underline transition-all duration-150 ease-in-out hover:no-underline">
+            <Link
+              to="/product"
+              className="underline transition-all duration-150 ease-in-out hover:no-underline"
+            >
               Discover the Collection
             </Link>
           </div>
@@ -55,7 +58,11 @@ function FeaturedOne() {
               key={content.id}
               className="py-2 transition-all duration-300 ease-in-out hover:scale-[1.01]"
             >
-              <img src={content.image} alt={content.price} />
+              <img
+                src={content.image}
+                alt={content.price}
+                className="h-[200px] w-[200px] object-cover object-center lg:h-[270px] lg:w-[400px]"
+              />
               <div>
                 <p className="mt-1 text-xs uppercase">{content.itemName}</p>
                 <p className="mt-1 text-xs uppercase">

@@ -49,74 +49,15 @@ const ActiveFour = (
   </svg>
 );
 
-import { Link } from "react-router-dom";
-import { formatCurrency } from "../../utils/helpers";
 import { useEffect, useState } from "react";
-import { IoBagAddOutline } from "react-icons/io5";
 import Filter from "./Filter";
 import { AnimatePresence } from "framer-motion";
-const products = [
-  {
-    id: 1,
-    image: "/images/product1.jpg",
-    to: "",
-    price: 500,
-    itemName: "init",
-  },
-  {
-    id: 2,
-    image: "/images/product2.jpg",
-    to: "",
-    price: 700,
-    itemName: "init",
-  },
-  {
-    id: 3,
-    image: "/images/product3.jpg",
-    to: "",
-    price: 900,
-    itemName: "init",
-  },
-  {
-    id: 4,
-    image: "/images/product4.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-  },
-  {
-    id: 5,
-    image: "/images/product1.jpg",
-    to: "",
-    price: 500,
-    itemName: "init",
-  },
-  {
-    id: 6,
-    image: "/images/product5.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-  },
-  {
-    id: 7,
-    image: "/images/product2.jpg",
-    to: "",
-    price: 700,
-    itemName: "init",
-  },
-  {
-    id: 8,
-    image: "/images/product3.jpg",
-    to: "",
-    price: 900,
-    itemName: "init",
-  },
-];
-
+import { useArtworks } from "./useArtworks";
+import ProductList from "./ProductList";
 function Products() {
   const [gridList, setGridList] = useState(true);
   const [openFilter, setOpenFilter] = useState(false);
+  const { artworks, isLoading } = useArtworks();
   useEffect(
     function () {
       if (openFilter) {
@@ -127,6 +68,8 @@ function Products() {
     },
     [openFilter],
   );
+  if (isLoading) return <p>Loading</p>;
+
   return (
     <>
       <section className="w-full pb-16">
@@ -145,32 +88,7 @@ function Products() {
               FILTER
             </button>
           </div>
-          <div
-            className={`mt-[30px] grid w-full ${
-              gridList ? "grid-cols-2" : "grid-cols-1"
-            } gap-5 gap-y-8 ${gridList ? "md:grid-cols-4" : "md:grid-cols-2"}`}
-          >
-            {products.map((product) => (
-              <div key={product.id} className="pb-4 pt-4">
-                <Link to="/detail">
-                  <img
-                    src={product.image}
-                    alt={product.itemName}
-                    loading="lazy"
-                  />
-                </Link>
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p>{product.itemName}</p>
-                    <p>{formatCurrency(product.price)}</p>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <IoBagAddOutline size="1.5rem" cursor="pointer" />
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ProductList artworks={artworks} gridList={gridList} />
         </div>
       </section>
       <AnimatePresence>

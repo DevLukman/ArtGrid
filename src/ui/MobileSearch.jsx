@@ -18,7 +18,7 @@ function MobileSearch() {
   const [input, setInput] = useState("");
   const [activeInput, setActiveInput] = useState(false);
   return (
-    <div className="fixed inset-0 z-40">
+    <div className="fixed inset-0 z-30">
       <div className="app-container relative z-40 h-screen w-full bg-[#fff] pt-[70px] lg:hidden">
         <form
           className={`flex items-center rounded-md border transition-all duration-100 ${
