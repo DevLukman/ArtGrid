@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useOutsideClick } from "../hooks/useOutsideClick";
+import SearchResultsDesktop from "./SearchResultsDesktop";
+
 const tags = [
   { id: 1, tag: "abstract", query: "" },
   { id: 2, tag: "art", query: "" },
@@ -11,8 +13,9 @@ const tags = [
   { id: 7, tag: "drawing", query: "" },
   { id: 8, tag: "scultpure", query: "" },
 ];
+
 /* eslint-disable react/prop-types */
-function Tag({ setActiveInput }) {
+function Tag({ setActiveInput, searchResults, isLoading }) {
   const closeRef = useOutsideClick(setActiveInput);
   return (
     <div className="fixed inset-0 z-30 w-full bg-gray-50/20 backdrop-blur-sm">
@@ -24,7 +27,6 @@ function Tag({ setActiveInput }) {
             opacity: 1,
             transition: { ease: "easeInOut", duration: 0.3 },
           }}
-          exit={{ y: 300, opacity: 0 }}
           ref={closeRef}
           className="ml-[50px] mt-[75px] min-h-[200px] max-w-[500px] rounded-md border border-[#000000c9] bg-[#fff] px-10 py-8"
         >
@@ -39,6 +41,11 @@ function Tag({ setActiveInput }) {
               </Link>
             ))}
           </div>
+
+          <SearchResultsDesktop
+            isLoading={isLoading}
+            searchResults={searchResults}
+          />
         </motion.div>
       </div>
     </div>

@@ -23,7 +23,7 @@ const ActiveTwo = (
     ></path>
   </svg>
 );
-
+// import Uploader from "../../data/Uploader";
 const ActiveFour = (
   <svg
     role="presentation"
@@ -49,11 +49,12 @@ const ActiveFour = (
   </svg>
 );
 
-import { useEffect, useState } from "react";
-import Filter from "./Filter";
 import { AnimatePresence } from "framer-motion";
-import { useArtworks } from "./useArtworks";
+import { useEffect, useState } from "react";
+import Loading from "../../ui/Loading";
+import Filter from "./Filter";
 import ProductList from "./ProductList";
+import { useArtworks } from "./useArtworks";
 function Products() {
   const [gridList, setGridList] = useState(true);
   const [openFilter, setOpenFilter] = useState(false);
@@ -68,10 +69,11 @@ function Products() {
     },
     [openFilter],
   );
-  if (isLoading) return <p>Loading</p>;
+  if (isLoading) return <Loading />;
 
   return (
     <>
+      {/* <Uploader /> */}
       <section className="w-full pb-16">
         <div className="app-container w-full pt-[100px]">
           <div className="flex w-full items-center justify-end gap-4">

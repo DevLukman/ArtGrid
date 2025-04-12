@@ -5,7 +5,7 @@ import { formatCurrency } from "../../utils/helpers";
 function ProductCard({ product }) {
   const { id, image, name, price } = product;
   return (
-    <div className="pb-4">
+    <div className="pb-8">
       <Link to={`/detail/${id}`}>
         <img src={image} alt={name} loading="lazy" />
       </Link>

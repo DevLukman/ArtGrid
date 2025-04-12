@@ -1,14 +1,15 @@
-import { Link } from "react-router-dom";
-import CurationCard from "./CurationCard";
-import Tag from "./Tag";
 import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { FaRegUserCircle } from "react-icons/fa";
 import { HiOutlineXMark } from "react-icons/hi2";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { FaRegUserCircle } from "react-icons/fa";
-import { useScrollNav } from "../hooks/useScrollNav";
-import NavList from "./NavList";
+import { Link } from "react-router-dom";
 import DesktopAuth from "../features/Authentication/DesktopAuth";
+import { useScrollNav } from "../hooks/useScrollNav";
+import CurationCard from "./CurationCard";
+import NavList from "./NavList";
+import Tag from "./Tag";
+import { useSearch } from "../features/ProductPage/useSearch";
 
 function Nav() {
   const [input, setInput] = useState("");
@@ -16,7 +17,7 @@ function Nav() {
   const [openCuration, setOpenCuration] = useState(false);
   const [openAuth, setOpenAuth] = useState(false);
   const navRef = useScrollNav();
-
+  const { data: searchResults, isLoading } = useSearch(input ? input : {});
   useEffect(
     function () {
       if (openCuration || openAuth) {
@@ -91,7 +92,13 @@ function Nav() {
         </header>
       </div>
 
-      {activeInput && <Tag setActiveInput={setActiveInput} />}
+      {activeInput && (
+        <Tag
+          setActiveInput={setActiveInput}
+          searchResults={searchResults}
+          isLoading={isLoading}
+        />
+      )}
       {openCuration && <CurationCard setOpenCuration={setOpenCuration} />}
       {openAuth && <DesktopAuth />}
     </>

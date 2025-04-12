@@ -1,18 +1,17 @@
-// 1q77aQqZ1UcPD3AB
+import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Artists from "./pages/Artists";
+import Cart from "./pages/Cart";
+import CheckOut from "./pages/CheckOut";
 import Home from "./pages/Home";
+import LogIn from "./pages/LogIn";
+import PageNotFound from "./pages/PageNotFound";
+import PrivateSales from "./pages/PrivateSales";
 import Product from "./pages/Product";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
-import Cart from "./pages/Cart";
-import PrivateSales from "./pages/PrivateSales";
 import RareArtwork from "./pages/RareArtwork";
-import Artists from "./pages/Artists";
-import PageNotFound from "./pages/PageNotFound";
-import LogIn from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
-import CheckOut from "./pages/CheckOut";
-import { QueryClient, QueryClientProvider } from "react-query";
-import { Toaster } from "react-hot-toast";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

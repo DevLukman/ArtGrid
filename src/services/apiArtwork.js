@@ -22,3 +22,16 @@ export async function getArtwork(id) {
   }
   return data;
 }
+
+export async function searchArtwork(name) {
+  const { data, error } = await supabase
+    .from("artworks")
+    .select("*")
+    .ilike("name", `%${name}%`);
+
+  if (error) {
+    throw new Error("There was error search artworks");
+  }
+
+  return data;
+}

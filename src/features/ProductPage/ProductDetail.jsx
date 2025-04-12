@@ -1,10 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
-import { formatCurrency } from "../../utils/helpers";
-import Nav from "../../ui/Nav";
 import MobileNav from "../../ui/MobileNav";
+import Nav from "../../ui/Nav";
+import { formatCurrency } from "../../utils/helpers";
 
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoBagAddOutline } from "react-icons/io5";
+import Loading from "../../ui/Loading";
 import { useArtwork } from "./useArtwork";
 const featuredContent = [
   {
@@ -36,7 +37,7 @@ function ProductDetail() {
   const { artwork, isLoading } = useArtwork();
   const { image, price, name, detail } = artwork;
 
-  if (isLoading) return <p>Loading</p>;
+  if (isLoading) return <Loading />;
   return (
     <>
       <Nav />
