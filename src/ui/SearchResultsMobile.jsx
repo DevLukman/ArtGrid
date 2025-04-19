@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
-
 /* eslint-disable react/prop-types */
-function SearchResultsDesktop({ searchResults, isLoading }) {
+import { Link } from "react-router-dom";
+function SearchResultsMobile({ searchResults, isLoading }) {
   if (isLoading) return <p>Loading</p>;
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <div className="mt-5 grid grid-cols-2 gap-4">
       {searchResults.map((result) => (
         <Link
           key={result.id}
@@ -25,4 +24,4 @@ function SearchResultsDesktop({ searchResults, isLoading }) {
   );
 }
 
-export default SearchResultsDesktop;
+export default SearchResultsMobile;

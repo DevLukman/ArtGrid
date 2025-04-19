@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import MobileNav from "../../ui/MobileNav";
 import Nav from "../../ui/Nav";
 import { formatCurrency } from "../../utils/helpers";
@@ -6,38 +6,19 @@ import { formatCurrency } from "../../utils/helpers";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { IoBagAddOutline } from "react-icons/io5";
 import Loading from "../../ui/Loading";
+import RelatedArtworks from "./RelatedArtworks";
 import { useArtwork } from "./useArtwork";
-const featuredContent = [
-  {
-    id: 1,
-    image: "/images/abstract.jpg",
-    to: "",
-    price: 500,
-    itemName: "init",
-  },
-  { id: 2, image: "/images/art.jpg", to: "", price: 700, itemName: "init" },
-  {
-    id: 3,
-    image: "/images/illustraction.jpg",
-    to: "",
-    price: 900,
-    itemName: "init",
-  },
-  {
-    id: 4,
-    image: "/images/photography.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-  },
-];
+import { useRelatedArtwork } from "./useRelatedArtwork";
 
 function ProductDetail() {
   const navigate = useNavigate();
   const { artwork, isLoading } = useArtwork();
-  const { image, price, name, detail } = artwork;
-
-  if (isLoading) return <Loading />;
+  const { image, price, name, detail, id, category } = artwork;
+  const { relatedArtwork, isLoading: isLoadingRelated } = useRelatedArtwork(
+    id,
+    category,
+  );
+  if (isLoading || isLoadingRelated) return <Loading />;
   return (
     <>
       <Nav />
@@ -49,7 +30,7 @@ function ProductDetail() {
           </div>
           <div className="relative top-[390px] w-full md:sticky md:top-[20px] md:h-fit md:w-[45%]">
             <div className="mt-2 flex flex-col">
-              <h1 className="text-2xl md:text-2xl">{name}</h1>
+              <h1 className="text-2xl capitalize md:text-2xl">{name}</h1>
               <p>{formatCurrency(price)}</p>
             </div>
             <div className="mt-4 w-full">
@@ -81,27 +62,7 @@ function ProductDetail() {
           </button>
         </div>
       </section>
-      <aside className="app-container">
-        <div>
-          <h3 className="text-2xl uppercase">Keep Exploring</h3>
-          <div className="mt-[20px] grid w-full grid-cols-2 gap-6 gap-y-8 sm:grid-cols-4 sm:gap-8">
-            {featuredContent.map((content) => (
-              <Link
-                key={content.id}
-                className="py-2 transition-all duration-300 ease-in-out hover:scale-[1.01]"
-              >
-                <img src={content.image} alt={content.price} />
-                <div>
-                  <p className="mt-1 text-xs uppercase">{content.itemName}</p>
-                  <p className="mt-1 text-xs uppercase">
-                    {formatCurrency(content.price)}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </aside>
+      <RelatedArtworks relatedArtwork={relatedArtwork} />
     </>
   );
 }

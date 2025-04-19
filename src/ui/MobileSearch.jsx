@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { HiOutlineXMark } from "react-icons/hi2";
+import { useSearch } from "../features/Artworks/useSearch";
 import MobileTag from "./MobileTag";
-
 function MobileSearch() {
   const [input, setInput] = useState("");
   const [activeInput, setActiveInput] = useState(false);
+  const { data: searchResults, isLoading } = useSearch(input ? input : {});
   return (
     <div className="fixed inset-0 z-30">
       <div className="app-container relative z-40 h-screen w-full bg-[#fff] pt-[70px] lg:hidden">
@@ -33,7 +34,9 @@ function MobileSearch() {
             />
           )}
         </form>
-        {activeInput && <MobileTag input={input} />}
+        {activeInput && (
+          <MobileTag searchResults={searchResults} isLoading={isLoading} />
+        )}
       </div>
     </div>
   );

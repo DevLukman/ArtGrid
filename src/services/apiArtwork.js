@@ -1,8 +1,9 @@
 import supabase from "./supabase";
 //Getting all the artworks
-export async function getArtworks() {
-  const { data, error } = await supabase.from("artworks").select("*");
-
+export async function getArtworks(filter) {
+  let query = supabase.from("artworks").select("*");
+  if (filter !== null) query = query.eq(filter.field, filter.value);
+  const { data, error } = await query;
   if (error) {
     console.error(error);
     throw new Error("There was an error get the artworks");
@@ -23,6 +24,7 @@ export async function getArtwork(id) {
   return data;
 }
 
+// for search
 export async function searchArtwork(name) {
   const { data, error } = await supabase
     .from("artworks")
@@ -33,5 +35,19 @@ export async function searchArtwork(name) {
     throw new Error("There was error search artworks");
   }
 
+  return data;
+}
+
+//getting related Product
+export async function getRealtedArtworks(id, category) {
+  const { data, error } = await supabase
+    .from("artworks")
+    .select("*")
+    .eq("category", category)
+    .neq("id", id)
+    .limit(4);
+  if (error) {
+    throw new Error("There was Error");
+  }
   return data;
 }

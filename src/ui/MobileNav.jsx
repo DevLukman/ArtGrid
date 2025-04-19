@@ -1,10 +1,10 @@
+import { useEffect, useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { FaXmark } from "react-icons/fa6";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { useScrollNav } from "../hooks/useScrollNav";
-import { useEffect, useState } from "react";
 import MobileNavLinks from "./MobileNavLinks";
-import { FaXmark } from "react-icons/fa6";
 import MobileSearch from "./MobileSearch";
 function MobileNav() {
   const [openNavbar, setOpenNavbar] = useState(false);

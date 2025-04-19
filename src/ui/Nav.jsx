@@ -9,7 +9,7 @@ import { useScrollNav } from "../hooks/useScrollNav";
 import CurationCard from "./CurationCard";
 import NavList from "./NavList";
 import Tag from "./Tag";
-import { useSearch } from "../features/ProductPage/useSearch";
+import { useSearch } from "../features/Artworks/useSearch";
 
 function Nav() {
   const [input, setInput] = useState("");

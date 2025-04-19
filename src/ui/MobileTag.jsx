@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import SearchResultsMobile from "./SearchResultsMobile";
 const tags = [
   { id: 1, tag: "abstract", query: "" },
   { id: 2, tag: "art", query: "" },
@@ -10,8 +12,7 @@ const tags = [
   { id: 7, tag: "drawing", query: "" },
   { id: 8, tag: "scultpure", query: "" },
 ];
-/* eslint-disable react/prop-types */
-function MobileTag({ input }) {
+function MobileTag({ searchResults, isLoading }) {
   return (
     <motion.div
       initial={{ y: 30, opacity: 0 }}
@@ -34,11 +35,10 @@ function MobileTag({ input }) {
         ))}
       </div>
       <div className="mt-6">
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>{input}</h1>
+        <SearchResultsMobile
+          searchResults={searchResults}
+          isLoading={isLoading}
+        />
       </div>
     </motion.div>
   );

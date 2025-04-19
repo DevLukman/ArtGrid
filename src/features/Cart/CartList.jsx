@@ -48,7 +48,7 @@ const cartContent = [
 import { AnimatePresence } from "framer-motion";
 import CartItems from "./CartItems";
 import CartInformation from "./CartInformation";
-import EmptyCart from "../../ui/EmptyCart";
+import EmptyCart from "./EmptyCart";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 

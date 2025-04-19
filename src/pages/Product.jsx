@@ -1,4 +1,4 @@
-import Products from "../features/ProductPage/Products";
+import Products from "../features/Artworks/Products";
 import Footer from "../ui/Footer";
 import MobileNav from "../ui/MobileNav";
 import Nav from "../ui/Nav";

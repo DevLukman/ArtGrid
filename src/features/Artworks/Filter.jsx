@@ -3,12 +3,12 @@ const filterCategory = [
   { id: 2, category: "Art", set: "", htmlFor: "art" },
   { id: 3, category: "digital art", set: "", htmlFor: "digitalart" },
   { id: 4, category: "drawing", set: "", htmlFor: "drawing" },
-  { id: 5, category: "illustration", set: "", htmlFor: "illustratoin" },
+  { id: 5, category: "illustration", set: "", htmlFor: "illustration" },
   { id: 6, category: "photograhpy", set: "", htmlFor: "photography" },
   { id: 7, category: "painting", set: "", htmlFor: "painting" },
   { id: 8, category: "scultpure", set: "", htmlFor: "scultpure" },
 ];
-const filterSortBy = [
+const SortBy = [
   { id: 1, category: "lowest Price", set: "", htmlFor: "lowestPrice" },
   { id: 2, category: "Highest Price", set: "", htmlFor: "highestPrice" },
   { id: 3, category: "Recent", set: "", htmlFor: "recent" },
@@ -21,10 +21,24 @@ import { useOutsideClick } from "../../hooks/useOutsideClick";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useSearchParams } from "react-router-dom";
 function Filter({ setOpenFilter }) {
   const [cateOpen, setCateOpen] = useState(false);
   const [sort, setSort] = useState(false);
   const closeRef = useOutsideClick(setOpenFilter);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  function handleFilter(value) {
+    searchParams.set("category", value);
+    setSearchParams(searchParams);
+  }
+  function handleSortBy(value) {
+    searchParams.set("sortby", value);
+    setSearchParams(searchParams);
+  }
+  function handleClear() {
+    setSearchParams("");
+  }
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -70,6 +84,7 @@ function Filter({ setOpenFilter }) {
                     id={category.htmlFor}
                     type="checkbox"
                     className="h-[20px] w-[20px] cursor-pointer accent-gray-300"
+                    onClick={() => handleFilter(category.htmlFor)}
                   />
                   <label className="cursor-pointer" htmlFor={category.htmlFor}>
                     {category.category}
@@ -94,18 +109,30 @@ function Filter({ setOpenFilter }) {
               )}
             </div>
             {sort &&
-              filterSortBy.map((category, id) => (
+              SortBy.map((category, id) => (
                 <div key={id} className="my-4 flex items-center gap-3">
                   <input
                     id={category.htmlFor}
                     type="checkbox"
                     className="h-[20px] w-[20px] cursor-pointer accent-gray-300"
+                    onClick={() => handleSortBy(category.htmlFor)}
                   />
                   <label className="cursor-pointer" htmlFor={category.htmlFor}>
                     {category.category}
                   </label>
                 </div>
               ))}
+          </div>
+          <div className="mt-4 flex items-center justify-center">
+            <button
+              className="mt-4 rounded bg-[#333] px-8 py-2 text-center text-base font-normal uppercase text-[#fff]"
+              onClick={(e) => {
+                e.preventDefault();
+                handleClear();
+              }}
+            >
+              Clear All
+            </button>
           </div>
         </form>
       </motion.div>
