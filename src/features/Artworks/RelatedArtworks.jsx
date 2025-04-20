@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/helpers";
 function RelatedArtworks({ relatedArtwork }) {
+  if (relatedArtwork.length === 0) return;
   return (
     <aside className="app-container">
       <div>

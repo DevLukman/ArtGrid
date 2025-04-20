@@ -1,8 +1,7 @@
 import supabase from "./supabase";
 //Getting all the artworks
-export async function getArtworks(filter) {
+export async function getArtworks() {
   let query = supabase.from("artworks").select("*");
-  if (filter !== null) query = query.eq(filter.field, filter.value);
   const { data, error } = await query;
   if (error) {
     console.error(error);
@@ -46,8 +45,9 @@ export async function getRealtedArtworks(id, category) {
     .eq("category", category)
     .neq("id", id)
     .limit(4);
+
   if (error) {
-    throw new Error("There was Error");
+    throw new Error("There was Error Getting ReatedArtworks");
   }
   return data;
 }

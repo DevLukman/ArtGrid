@@ -3,9 +3,9 @@ import { getRealtedArtworks } from "../../services/apiArtwork";
 
 export function useRelatedArtwork(id, category) {
   const { data: relatedArtwork, isLoading } = useQuery({
-    queryKey: ["related", id, category],
+    queryKey: ["relatedArtwork", id, category],
     queryFn: () => getRealtedArtworks(id, category),
+    enabled: !!category || !!id,
   });
-
   return { relatedArtwork, isLoading };
 }

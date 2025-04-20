@@ -4,7 +4,7 @@ function HeroSection() {
       <section className="relative h-screen w-full overflow-hidden">
         <div>
           <video
-            src="/videos/hero-1.mp4"
+            src="https://eldglheibpfcfzpjfxbh.supabase.co/storage/v1/object/public/artworks//hero-1.mp4"
             width="100%"
             height="100%"
             autoPlay

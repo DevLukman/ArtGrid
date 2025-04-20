@@ -12,6 +12,7 @@ import Product from "./pages/Product";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import RareArtwork from "./pages/RareArtwork";
 import SignUp from "./pages/SignUp";
+import ScrollToTop from "./ui/scrollToTop";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -23,6 +24,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="product" element={<Product />} />

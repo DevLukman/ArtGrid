@@ -1,30 +1,10 @@
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/helpers";
-const featuredContent = [
-  {
-    id: 1,
-    image: "/images/product2.jpg",
-    to: "",
-    price: 500,
-    itemName: "init",
-  },
-  { id: 2, image: "/images/art.jpg", to: "", price: 700, itemName: "init" },
-  {
-    id: 3,
-    image: "/images/illustraction.jpg",
-    to: "",
-    price: 900,
-    itemName: "init",
-  },
-  {
-    id: 4,
-    image: "/images/photography.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-  },
-];
+import { useArtworks } from "../Artworks/useArtworks";
 function FeaturedOne() {
+  const { artworks = [], isLoading } = useArtworks();
+  const results = artworks.slice(20, 24);
+  if (isLoading) return <h1>Hello</h1>;
   return (
     <section className="mt-[90px] w-full pb-10">
       <div className="app-container">
@@ -34,7 +14,7 @@ function FeaturedOne() {
             Pixel & Patina
           </h1>
           <p>
-            From ArtGrid to Albers, the light carries the A through the grid.
+            From ArtGrid to Albers, the light carries the Art through the grid.
           </p>
           <div className="mt-4">
             <Link
@@ -53,18 +33,19 @@ function FeaturedOne() {
           />
         </div>
         <div className="mt-[60px] grid w-full grid-cols-2 gap-6 gap-y-8 sm:grid-cols-4 sm:gap-8 lg:mt-[100px]">
-          {featuredContent.map((content) => (
+          {results.map((content) => (
             <Link
               key={content.id}
+              to={`/detail/${content.id}`}
               className="py-2 transition-all duration-300 ease-in-out hover:scale-[1.01]"
             >
               <img
                 src={content.image}
-                alt={content.price}
+                alt={content.name}
                 className="h-[200px] w-[200px] object-cover object-center lg:h-[270px] lg:w-[400px]"
               />
               <div>
-                <p className="mt-1 text-xs uppercase">{content.itemName}</p>
+                <p className="mt-1 text-xs uppercase">{content.name}</p>
                 <p className="mt-1 text-xs uppercase">
                   {formatCurrency(content.price)}
                 </p>
