@@ -4,13 +4,13 @@ import { FaRegUserCircle } from "react-icons/fa";
 import { HiOutlineXMark } from "react-icons/hi2";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { useSearch } from "../features/Artworks/useSearch";
 import DesktopAuth from "../features/Authentication/DesktopAuth";
 import { useScrollNav } from "../hooks/useScrollNav";
 import CurationCard from "./CurationCard";
 import NavList from "./NavList";
 import Tag from "./Tag";
-import { useSearch } from "../features/Artworks/useSearch";
-
+import CartQuantity from "../features/cart/CartQuantity";
 function Nav() {
   const [input, setInput] = useState("");
   const [activeInput, setActiveInput] = useState(false);
@@ -84,9 +84,7 @@ function Nav() {
                 cursor="pointer"
                 onClick={() => setOpenAuth((c) => !c)}
               />
-              <Link to="/cart" className="text-xl font-medium">
-                Cart(0)
-              </Link>
+              <CartQuantity />
             </div>
           </nav>
         </header>

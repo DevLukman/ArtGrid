@@ -1,59 +1,62 @@
-const cartContent = [
-  {
-    id: 1,
-    image: "/images/abstract.jpg",
-    to: "",
-    price: 500,
-    itemName: "init",
-    artist: "Flick",
-    category: "drawing",
-  },
-  {
-    id: 2,
-    image: "/images/art.jpg",
-    to: "",
-    price: 700,
-    itemName: "init",
-    artist: "Flick",
-    category: "drawing",
-  },
-  {
-    id: 3,
-    image: "/images/illustraction.jpg",
-    to: "",
-    price: 900,
-    itemName: "init",
-    artist: "Flick",
-    category: "drawing",
-  },
-  {
-    id: 4,
-    image: "/images/photography.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-    artist: "Flick",
-    category: "drawing",
-  },
-  {
-    id: 5,
-    image: "/images/photography.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-    artist: "Flick",
-    category: "drawing",
-  },
-];
+// const cartContent = [
+//   {
+//     id: 1,
+//     image: "/images/abstract.jpg",
+//     to: "",
+//     price: 500,
+//     itemName: "init",
+//     artist: "Flick",
+//     category: "drawing",
+//   },
+//   {
+//     id: 2,
+//     image: "/images/art.jpg",
+//     to: "",
+//     price: 700,
+//     itemName: "init",
+//     artist: "Flick",
+//     category: "drawing",
+//   },
+//   {
+//     id: 3,
+//     image: "/images/illustraction.jpg",
+//     to: "",
+//     price: 900,
+//     itemName: "init",
+//     artist: "Flick",
+//     category: "drawing",
+//   },
+//   {
+//     id: 4,
+//     image: "/images/photography.jpg",
+//     to: "",
+//     price: 1200,
+//     itemName: "init",
+//     artist: "Flick",
+//     category: "drawing",
+//   },
+//   {
+//     id: 5,
+//     image: "/images/photography.jpg",
+//     to: "",
+//     price: 1200,
+//     itemName: "init",
+//     artist: "Flick",
+//     category: "drawing",
+//   },
+// ];
 import { AnimatePresence } from "framer-motion";
 import CartItems from "./CartItems";
 import CartInformation from "./CartInformation";
 import EmptyCart from "./EmptyCart";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { getCart } from "./cartSlice";
 
 function CartList() {
   const navigate = useNavigate();
+  const cartContent = useSelector(getCart);
   return (
     <section className="relative w-full">
       <div className="app-container relative flex w-full flex-col gap-6 pt-[120px] lg:flex-row">

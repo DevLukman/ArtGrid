@@ -3,16 +3,22 @@ import { HiOutlineXMark } from "react-icons/hi2";
 import { formatCurrency } from "../../utils/helpers";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { deleteArtwork, getTotalPrice, getTotalQuantity } from "./cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+
 function CartItems({ cartContent }) {
+  const totalPrice = useSelector(getTotalPrice);
+  const quantity = useSelector(getTotalQuantity);
+  const dispatch = useDispatch();
   return (
     <>
       <div className="w-full lg:w-[60%]">
         <div className="mb-4 w-full bg-[#fafafa] p-6 lg:hidden">
-          <h1>You have X items in your cart.</h1>
+          <h1>You have {quantity} items in your cart.</h1>
         </div>
         <div className="w-full bg-[#fafafa]">
           <div className="hidden w-full border-b border-[#dcdcdc] p-6 lg:block">
-            <h1>You have X items in your cart.</h1>
+            <h1>You have {quantity} items in your cart.</h1>
           </div>
 
           <AnimatePresence>
@@ -30,11 +36,11 @@ function CartItems({ cartContent }) {
                 <div className="flex gap-3">
                   <img
                     src={cart.image}
-                    alt={cart.itemName}
+                    alt={cart.name}
                     className="h-[70px] w-[70px] sm:h-[100px] sm:w-[100px]"
                   />
                   <div className="flex flex-col">
-                    <p className="capitalize">{cart.itemName}</p>
+                    <p className="capitalize">{cart.name}</p>
                     <p className="capitalize">{cart.artist}</p>
                     <p className="capitalize">{cart.category}</p>
                   </div>
@@ -43,6 +49,7 @@ function CartItems({ cartContent }) {
                   <HiOutlineXMark
                     className="flex w-full justify-end text-xl"
                     cursor="pointer"
+                    onClick={() => dispatch(deleteArtwork(cart.id))}
                   />
                   <p>{formatCurrency(cart.price)}</p>
                 </div>
@@ -51,7 +58,7 @@ function CartItems({ cartContent }) {
           </AnimatePresence>
           <div className="flex w-full items-center justify-between border-b border-[#dcdcdc] p-6">
             <h2>SUBTOTAL</h2>
-            <p>{formatCurrency(4000)}</p>
+            <p>{formatCurrency(totalPrice)}</p>
           </div>
           <div className="w-full border-b border-[#dcdcdc] p-6">
             <div className="flex items-center justify-between">
@@ -73,7 +80,7 @@ function CartItems({ cartContent }) {
           </div>
           <div className="flex w-full items-center justify-between border-b border-[#dcdcdc] p-6">
             <h3>TOTAL</h3>
-            <p>{formatCurrency(40000)}</p>
+            <p>{formatCurrency(totalPrice)}</p>
           </div>
         </div>
         <div className="mt-4 flex w-full items-center justify-center bg-[#fafafa] py-5 lg:relative">

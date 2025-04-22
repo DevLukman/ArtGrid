@@ -1,55 +1,4 @@
-const privateContent = [
-  {
-    id: 1,
-    image: "/images/abstract.jpg",
-    to: "",
-    price: 500,
-    itemName: "init",
-  },
-  { id: 2, image: "/images/art.jpg", to: "", price: 700, itemName: "init" },
-  {
-    id: 3,
-    image: "/images/illustraction.jpg",
-    to: "",
-    price: 900,
-    itemName: "init",
-  },
-  {
-    id: 4,
-    image: "/images/photography.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-  },
-  {
-    id: 5,
-    image: "/images/photography.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-  },
-  {
-    id: 6,
-    image: "/images/photography.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-  },
-  {
-    id: 7,
-    image: "/images/photography.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-  },
-  {
-    id: 8,
-    image: "/images/photography.jpg",
-    to: "",
-    price: 1200,
-    itemName: "init",
-  },
-];
+const privateContent = [];
 
 import { MdOutlineForwardToInbox } from "react-icons/md";
 import PrivateSalesItem from "./PrivateSalesItem";
@@ -75,7 +24,6 @@ function PrivateSalesList() {
             <span>Get In Touch</span>
           </button>
         </div>
-        {/*  */}
         <PrivateSalesItem privateContent={privateContent} />
         <PrivateSalesInformation />
       </div>

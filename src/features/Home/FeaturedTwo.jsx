@@ -27,7 +27,7 @@ function FeaturedTwo() {
         </div>
         <div className="mt-[40px]">
           <img
-            src="images/featured2.jpg"
+            src="https://eldglheibpfcfzpjfxbh.supabase.co/storage/v1/object/public/artworks//featured-2.jpg"
             alt="Pixel & Patina"
             className="h-[500px] w-full"
           />

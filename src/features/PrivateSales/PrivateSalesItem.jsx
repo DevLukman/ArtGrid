@@ -5,7 +5,9 @@ function PrivateSalesItem({ privateContent }) {
     <>
       <div className="mt-[60px] border-t border-[#000] pt-[60px]">
         <h1 className="text-base font-medium sm:text-3xl">
-          Availabe artwork for inquiry
+          {privateContent.length === 0
+            ? "No artwork is available at the moment"
+            : " Availabe artwork for inquiry"}
         </h1>
         <div className="mt-6 grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {privateContent.map((content) => (
