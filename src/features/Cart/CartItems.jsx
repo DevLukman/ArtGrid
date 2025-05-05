@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
+import { AnimatePresence, motion } from "framer-motion";
 import { HiOutlineXMark } from "react-icons/hi2";
-import { formatCurrency } from "../../utils/helpers";
-import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { deleteArtwork, getTotalPrice, getTotalQuantity } from "./cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { formatCurrency } from "../../utils/helpers";
+import { deleteArtwork, getTotalPrice, getTotalQuantity } from "./cartSlice";
 
 function CartItems({ cartContent }) {
   const totalPrice = useSelector(getTotalPrice);

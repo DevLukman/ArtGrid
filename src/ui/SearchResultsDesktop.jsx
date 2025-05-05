@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import SearchLoading from "./SearchLoading";
 
 /* eslint-disable react/prop-types */
 function SearchResultsDesktop({ searchResults, isLoading }) {
-  if (isLoading) return <p>Loading</p>;
+  if (isLoading) return <SearchLoading />;
   return (
     <div className="grid grid-cols-3 gap-4">
       {searchResults.map((result) => (

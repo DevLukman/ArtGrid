@@ -1,9 +1,12 @@
 function Loading() {
   return (
-    <div className="relative z-50 h-screen w-full overflow-hidden">
-      <h1 className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] text-7xl">
-        Loading
-      </h1>
+    <div id="loader">
+      <div className="circle-loader">
+        <div className="circle circle-1"></div>
+        <div className="circle circle-2"></div>
+        <div className="circle circle-3"></div>
+        <div className="circle circle-4"></div>
+      </div>
     </div>
   );
 }

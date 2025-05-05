@@ -5,8 +5,8 @@ import { useSelector } from "react-redux";
 function CartQuantity() {
   const quantity = useSelector(getTotalQuantity);
   return (
-    <Link to="/cart" className="text-xl font-medium">
-      Cart({quantity})
+    <Link to="/cart" className="text-base font-medium md:text-xl">
+      Cart (<span className="px-1">{quantity}</span>)
     </Link>
   );
 }

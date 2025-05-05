@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
+import SearchLoading from "./SearchLoading";
 function SearchResultsMobile({ searchResults, isLoading }) {
-  if (isLoading) return <p>Loading</p>;
+  if (isLoading) return <SearchLoading />;
   return (
     <div className="mt-5 grid grid-cols-2 gap-4">
       {searchResults.map((result) => (

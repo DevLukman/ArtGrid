@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import toast from "react-hot-toast";
 const initialState = {
-  cart: [],
+  items: [],
 };
 
 const cartSlice = createSlice({
@@ -9,31 +9,26 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addArtwork(state, action) {
-      state.cart.push(action.payload);
+      const newItem = action.payload;
+      const existing = state.items?.find(
+        (artwork) => artwork.id === newItem.id,
+      );
+      if (!existing) {
+        state.items?.push(newItem);
+        toast.success(`${newItem.name} added to cart`);
+      } else {
+        toast.success(`${newItem.name} is already in cart`);
+      }
     },
     deleteArtwork(state, action) {
-      state.cart = state.cart.filter((art) => art.id !== action.payload);
+      state.items = state.items.filter((art) => art.id !== action.payload);
     },
   },
 });
 
 export const { addArtwork, deleteArtwork } = cartSlice.actions;
 export default cartSlice.reducer;
-
-export const getCart = (store) => store.cart.cart;
-export const getTotalPrice = (store) =>
-  store.cart.cart.reduce((sum, item) => sum + item.price, 0);
-export const getTotalQuantity = (store) => store.cart.cart.length;
-
-// export default cartSlice.reducer;
-// export const getCart = (store) => store.cart.cart;
-// export const getUserName = (store) => store.user.username;
-// export const getTotalCartQuantity = (store) =>
-//   store.cart.cart.reduce((sum, item) => sum + item.quantity, 0);
-
-// export const getTotalCartPrice = (store) =>
-//   store.cart.cart.reduce((sum, item) => sum + item.totalPrice, 0);
-// export const getCurrentQuantityById = (id) => (store) =>
-//   store.cart.cart.find((item) => item.pizzaId === id)?.quantity ?? 0;
-
-// //Reselect
+export const getCart = (state) => state.cart.items;
+export const getTotalPrice = (state) =>
+  state.cart.items.reduce((sum, item) => sum + item.price, 0);
+export const getTotalQuantity = (state) => state.cart.items?.length;

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useScrollNav } from "../hooks/useScrollNav";
 import MobileNavLinks from "./MobileNavLinks";
 import MobileSearch from "./MobileSearch";
+import CartQuantity from "../features/cart/CartQuantity";
 function MobileNav() {
   const [openNavbar, setOpenNavbar] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -35,7 +36,8 @@ function MobileNav() {
                 AG
               </Link>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
+              <CartQuantity />
               {searchOpen ? (
                 <FaXmark
                   onClick={() => setSearchOpen(!searchOpen)}
@@ -51,6 +53,7 @@ function MobileNav() {
                   onClick={() => setSearchOpen(!searchOpen)}
                 />
               )}
+
               {openNavbar ? (
                 <FaXmark
                   onClick={() => setOpenNavbar(!openNavbar)}

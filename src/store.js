@@ -1,17 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "./features/cart/cartSlice";
-// Get artworks from localStorage
-function loadedArtworkFromStorage() {
-  const artStored = localStorage.getItem("cart");
-  return artStored ? JSON.parse(artStored) : [];
-}
+import { loadState, saveState } from "./utils/helpers";
 
-function addArtworkToStorage(state) {
-  localStorage.setItem("cart", JSON.stringify(state.cart));
-}
 const preloadedState = {
-  cart: loadedArtworkFromStorage(),
+  cart: loadState() || {
+    items: [],
+  },
 };
+
 const store = configureStore({
   reducer: {
     cart: cartReducer,
@@ -20,7 +16,7 @@ const store = configureStore({
 });
 
 store.subscribe(() => {
-  addArtworkToStorage(store.getState());
+  saveState(store.getState().cart);
 });
 
 export default store;
