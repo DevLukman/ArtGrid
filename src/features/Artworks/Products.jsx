@@ -55,10 +55,11 @@ import Loading from "../../ui/Loading";
 import Filter from "./Filter";
 import ProductList from "./ProductList";
 import { useArtworks } from "./useArtworks";
+import Pagination from "../../ui/Pagination";
 function Products() {
   const [gridList, setGridList] = useState(true);
   const [openFilter, setOpenFilter] = useState(false);
-  const { artworks, isLoading } = useArtworks();
+  const { artworks, isLoading, count } = useArtworks();
   useEffect(
     function () {
       if (openFilter) {
@@ -92,6 +93,7 @@ function Products() {
           </div>
           <ProductList artworks={artworks} gridList={gridList} />
         </div>
+        <Pagination count={count} />
       </section>
       <AnimatePresence>
         {openFilter && <Filter setOpenFilter={setOpenFilter} />}

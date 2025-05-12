@@ -13,6 +13,7 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import RareArtwork from "./pages/RareArtwork";
 import SignUp from "./pages/SignUp";
 import ScrollToTop from "./ui/scrollToTop";
+import ProtectedRoute from "./ui/ProtectedRoute";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -36,7 +37,14 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/checkout" element={<CheckOut />} />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                <CheckOut />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </BrowserRouter>
       <Toaster

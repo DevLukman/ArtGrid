@@ -1,39 +1,11 @@
 import { useState } from "react";
 import { formatCurrency } from "../../utils/helpers";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-
-const reviewSummary = [
-  {
-    id: 1,
-    image: "/images/abstract.jpg",
-    to: "",
-    price: 500,
-    itemName: "init",
-    artist: "Flick",
-    category: "drawing",
-  },
-  {
-    id: 2,
-    image: "/images/abstract.jpg",
-    to: "",
-    price: 500,
-    itemName: "init",
-    artist: "Flick",
-    category: "drawing",
-  },
-  {
-    id: 3,
-    image: "/images/abstract.jpg",
-    to: "",
-    price: 500,
-    itemName: "init",
-    artist: "Flick",
-    category: "drawing",
-  },
-];
-
+import { useSelector } from "react-redux";
+import { getCart } from "../cart/cartSlice";
 function Review() {
   const [isOpen, setIsOpen] = useState(false);
+  const cartContent = useSelector(getCart);
   return (
     <div className="w-full rounded bg-[#fafafa] px-4 py-4">
       <div className="flex w-full items-center justify-between">
@@ -47,7 +19,7 @@ function Review() {
         </button>
       </div>
       {isOpen &&
-        reviewSummary.map((cart) => (
+        cartContent.map((cart) => (
           <div
             key={cart.id}
             className="flex justify-between border-b border-[#dcdcdc]"
@@ -55,11 +27,11 @@ function Review() {
             <div className="flex gap-3">
               <img
                 src={cart.image}
-                alt={cart.itemName}
+                alt={cart.name}
                 className="h-[70px] w-[70px] sm:h-[100px] sm:w-[100px]"
               />
               <div className="flex flex-col">
-                <p className="capitalize">{cart.itemName}</p>
+                <p className="capitalize">{cart.name}</p>
                 <p className="capitalize">{cart.artist}</p>
                 <p className="capitalize">{cart.category}</p>
               </div>

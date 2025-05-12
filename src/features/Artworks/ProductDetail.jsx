@@ -35,12 +35,12 @@ function ProductDetail() {
           <div className="absolute left-0 top-[10%] w-full md:relative md:top-0 md:w-[55%]">
             <img src={image} className="w-full" alt={name} />
           </div>
-          <div className="relative top-[390px] w-full md:sticky md:top-[20px] md:h-fit md:w-[45%]">
+          <div className="relative top-[400px] w-full md:sticky md:top-[20px] md:h-fit md:w-[45%]">
             <div className="mt-2 flex flex-col">
-              <h1 className="text-2xl capitalize md:text-2xl">{name}</h1>
+              <h1 className="text-xl capitalize md:text-2xl">{name}</h1>
               <p>{formatCurrency(price)}</p>
             </div>
-            <div className="mt-4 w-full">
+            <div className="mt-2 w-full">
               <button
                 onClick={handleAddToCart}
                 className="flex w-full items-center justify-center gap-2 bg-[#000] py-2 text-xs uppercase text-[#fff]"
@@ -65,10 +65,10 @@ function ProductDetail() {
             Back
           </button>
           <button
-            className="absolute left-[3%] top-[12%] flex items-center gap-2 bg-[#fafafa] px-1 py-1 sm:hidden"
+            className="absolute left-[3%] top-[14%] flex items-center gap-2 bg-[#fafafa] px-1 py-1 sm:hidden"
             onClick={() => navigate(-1)}
           >
-            <IoIosArrowRoundBack size="1rem" />
+            <IoIosArrowRoundBack size="1.2rem" />
           </button>
         </div>
       </section>

@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { formatCurrency } from "../../utils/helpers";
-import { useArtworks } from "../Artworks/useArtworks";
+import { useFeatured } from "./useFeatured";
+import Loading from "../../ui/Loading";
 function FeaturedTwo() {
-  const { artworks = [], isLoading } = useArtworks();
-  const results = artworks.slice(15, 19);
-  if (isLoading) return <h1>Hello</h1>;
+  const { featured = [], isLoading } = useFeatured();
+  const results = featured.slice(15, 19);
+  if (isLoading) return <Loading />;
   return (
     <section className="mt-[100px] w-full pb-10">
       <div className="app-container">

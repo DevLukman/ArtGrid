@@ -6,7 +6,7 @@ export function useScrollNav() {
   const [navVisible, setNavVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const { y: currentScrollY } = useWindowScroll();
-  const navRef = useRef();
+  const navRef = useRef(null);
 
   useEffect(
     function () {

@@ -74,6 +74,7 @@ function Footer() {
           <motion.p
             initial="initial"
             whileInView="textinview"
+            viewport={{ once: true }}
             className="mt-[35px] w-full text-center text-[12vw] font-extrabold uppercase"
             key={index}
           >
@@ -85,7 +86,6 @@ function Footer() {
                   duration: DURATION,
                   delay: STAGGER * num,
                 }}
-                viewport={{ once: true }}
                 className="inline-block"
                 key={num}
               >

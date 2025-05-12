@@ -3,10 +3,18 @@ import { FaXmark } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
+import { useLogin } from "./useLogin";
+import SearchLoading from "../../ui/SearchLoading";
 function LoginForm() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("123456789");
+  const [password, setPassword] = useState("");
+  const { login, isLoading } = useLogin();
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!email && !password) return;
+    login({ email, password });
+  }
   return (
     <>
       <section className="h-screen w-full overflow-hidden bg-[#fafafa]">
@@ -16,31 +24,36 @@ function LoginForm() {
               Welcome to ArtGrid
             </h1>
             <button
-              onClick={() => navigate("/")}
+              onClick={() => navigate(-1)}
               className="absolute right-4 top-4"
             >
               <FaXmark />
             </button>
-            <form className="mt-8 px-4 md:px-8">
+            <form className="mt-8 px-4 md:px-8" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Email Address"
                 className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                disabled={isLoading}
                 required
               />
               <input
                 type="password"
                 placeholder="Password"
                 value={password}
+                disabled={isLoading}
                 onChange={(e) => setPassword(e.target.value)}
                 className="mt-6 w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
                 required
               />
               <div className="mt-6">
-                <button className="w-full rounded bg-[#000] py-2 text-center uppercase text-white">
-                  Log In
+                <button
+                  disabled={isLoading}
+                  className="w-full rounded bg-[#000] py-2 text-center uppercase text-white"
+                >
+                  {!isLoading ? "Log In" : <SearchLoading />}
                 </button>
               </div>
               <div className="mt-6 w-full">

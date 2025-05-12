@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { useCurrentUser } from "../Authentication/useCurrentUser";
 
 function DeliveryInformationForm() {
   const [isOpen, setIsOpen] = useState(false);
+  const { userData = {} } = useCurrentUser();
+  const { email, firstName, lastName, phone } = userData;
   return (
     <div className="mt-8 rounded bg-[#fafafa] px-4 py-4">
       <div className="flex w-full items-center justify-between">
@@ -21,12 +24,16 @@ function DeliveryInformationForm() {
             <input
               type="text"
               placeholder="First Name"
+              id="firstName"
+              defaultValue={firstName}
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
             />
             <input
               type="text"
               placeholder="Last Name"
+              id="lastName"
+              defaultValue={lastName}
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
             />
@@ -35,6 +42,7 @@ function DeliveryInformationForm() {
             <input
               type="text"
               placeholder="Address"
+              id="address"
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
             />
@@ -43,6 +51,7 @@ function DeliveryInformationForm() {
             <input
               type="text"
               placeholder="Address 2"
+              id="address2"
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
             />
@@ -51,12 +60,14 @@ function DeliveryInformationForm() {
             <input
               type="text"
               placeholder="country"
+              id="country"
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
             />
             <input
               type="text"
               placeholder="city"
+              id="city"
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
             />
@@ -65,12 +76,14 @@ function DeliveryInformationForm() {
             <input
               type="text"
               placeholder="state/region"
+              id="state/region"
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
             />
             <input
               type="text"
               placeholder="Zip/Postal code"
+              id="zip"
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
             />
@@ -79,12 +92,16 @@ function DeliveryInformationForm() {
             <input
               type="number"
               placeholder="Phone Number"
+              id="phoneNumber"
+              defaultValue={phone}
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
             />
             <input
               type="text"
               placeholder="Email"
+              id="email"
+              defaultValue={email}
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
             />

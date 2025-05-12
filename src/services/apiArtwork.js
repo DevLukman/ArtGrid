@@ -1,13 +1,20 @@
 import supabase from "./supabase";
+import { PAGE_SIZE } from "../utils/helpers";
 //Getting all the artworks
-export async function getArtworks() {
-  let query = supabase.from("artworks").select("*");
-  const { data, error } = await query;
+export async function getArtworks({ page }) {
+  let query = supabase.from("artworks").select("*", { count: "exact" });
+  if (page) {
+    const from = (page - 1) * PAGE_SIZE;
+    const to = from + PAGE_SIZE - 1;
+    query = query.range(from, to);
+  }
+  const { data, error, count } = await query;
+
   if (error) {
     console.error(error);
     throw new Error("There was an error get the artworks");
   }
-  return data;
+  return { data, count };
 }
 
 //Getting a single artworks
@@ -48,6 +55,16 @@ export async function getRealtedArtworks(id, category) {
 
   if (error) {
     throw new Error("There was Error Getting ReatedArtworks");
+  }
+  return data;
+}
+
+//Getting all the Featured
+export async function getFeatured() {
+  const { data, error } = await supabase.from("artworks").select("*");
+  if (error) {
+    console.error(error);
+    throw new Error("There was an error get the artworks");
   }
   return data;
 }

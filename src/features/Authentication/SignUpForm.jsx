@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { FaXmark } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
+import SearchLoading from "../../ui/SearchLoading";
+import { useSignUp } from "./useSignUp";
 function SignUpForm() {
   const navigate = useNavigate();
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("123456789");
-
+  const { register, handleSubmit, reset } = useForm();
+  const { signup, isLoading } = useSignUp();
+  function onSubmit({ email, password, firstName, lastName, phone }) {
+    signup(
+      { email, password, firstName, lastName, phone },
+      {
+        onSettled: () => reset(),
+      },
+    );
+  }
   return (
     <section className="h-screen w-full overflow-hidden bg-[#fafafa]">
       <div className="flex h-screen w-full items-center justify-center">
@@ -18,47 +25,68 @@ function SignUpForm() {
             Welcome to ArtGrid
           </h1>
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate(-1)}
             className="absolute right-4 top-4"
           >
             <FaXmark />
           </button>
-          <form className="px-4 md:px-8">
+          <form className="px-4 md:px-8" onSubmit={handleSubmit(onSubmit)}>
             <input
               type="text"
               placeholder="First Name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              id="firstName"
+              {...register("firstName")}
               className="mt-4 w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
+              disabled={isLoading}
             />
             <input
               type="text"
               placeholder="Last Name"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              id="lastName"
+              {...register("lastName")}
               className="mt-4 w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
+              disabled={isLoading}
             />
             <input
               type="text"
               placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              id="email"
+              {...register("email", {
+                pattern: {
+                  value: /\S+@\S+\.\S+/,
+                  message: "Please provide a valid email address",
+                },
+              })}
               className="mt-4 w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
+              disabled={isLoading}
             />
             <input
-              type="text"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              type="number"
+              placeholder="Phone Number"
+              id="phone"
+              {...register("phone")}
               className="mt-4 w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required
+              disabled={isLoading}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              id="password"
+              {...register("password")}
+              className="mt-4 w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
+              required
+              disabled={isLoading}
             />
             <div className="mt-4">
-              <button className="w-full rounded bg-[#000] py-2 text-center uppercase text-white">
-                Sign Up
+              <button
+                disabled={isLoading}
+                className="w-full rounded bg-[#000] py-2 text-center uppercase text-white"
+              >
+                {!isLoading ? "Sign up" : <SearchLoading />}
               </button>
             </div>
             <div className="mt-4 w-full">

@@ -10,9 +10,7 @@ const cartSlice = createSlice({
   reducers: {
     addArtwork(state, action) {
       const newItem = action.payload;
-      const existing = state.items?.find(
-        (artwork) => artwork.id === newItem.id,
-      );
+      const existing = state.items.find((artwork) => artwork.id === newItem.id);
       if (!existing) {
         state.items?.push(newItem);
         toast.success(`${newItem.name} added to cart`);
@@ -21,7 +19,10 @@ const cartSlice = createSlice({
       }
     },
     deleteArtwork(state, action) {
-      state.items = state.items.filter((art) => art.id !== action.payload);
+      const deletedItem = action.payload;
+      const inCart = state.items.find((item) => item.id === deletedItem);
+      state.items = state.items.filter((art) => art.id !== deletedItem);
+      toast.success(`${inCart.name} removed from cart`);
     },
   },
 });
