@@ -22,27 +22,6 @@ img {
   }
 }
 
-/* For search loading */
-.spinner-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.spinner {
-  width: 25px;
-  height: 25px;
-  border: 2px solid gray;
-  border-radius: 50%;
-  border-top-color: rgba(255, 255, 255, 0.125);
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 /* For Loading Data. credit: Bharadwaja Sahoo-CodePen */
 #loader {
   width: 100%;

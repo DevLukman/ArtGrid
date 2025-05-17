@@ -3,8 +3,8 @@ import { FaXmark } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 import { useLogin } from "./useLogin";
-import SearchLoading from "../../ui/SearchLoading";
 function LoginForm() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -53,7 +53,11 @@ function LoginForm() {
                   disabled={isLoading}
                   className="w-full rounded bg-[#000] py-2 text-center uppercase text-white"
                 >
-                  {!isLoading ? "Log In" : <SearchLoading />}
+                  {!isLoading ? (
+                    "Log In"
+                  ) : (
+                    <ClipLoader color="#fff" size="1.3rem" />
+                  )}
                 </button>
               </div>
               <div className="mt-6 w-full">

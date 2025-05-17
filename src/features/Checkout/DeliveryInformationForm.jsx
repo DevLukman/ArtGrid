@@ -47,15 +47,6 @@ function DeliveryInformationForm() {
               required
             />
           </div>
-          <div>
-            <input
-              type="text"
-              placeholder="Address 2"
-              id="address2"
-              className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
-              required
-            />
-          </div>
           <div className="flex flex-col items-center gap-4 md:flex-row">
             <input
               type="text"
@@ -75,7 +66,7 @@ function DeliveryInformationForm() {
           <div className="flex flex-col items-center gap-4 md:flex-row">
             <input
               type="text"
-              placeholder="state/region"
+              placeholder="State"
               id="state/region"
               className="w-full rounded border border-gray-300 px-3 py-3 outline-none focus:border-[#333]"
               required

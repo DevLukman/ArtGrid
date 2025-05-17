@@ -5,7 +5,7 @@ export const artworks = [
   {
     name: "Bazille and Camille",
     category: "painting",
-    price: 3000,
+    price: 200000,
     artist: "Claude Monet",
     image: imageUrl + "art-001.jpg",
     detail: "Bazille and Camille by Claude Monet.",
@@ -14,7 +14,7 @@ export const artworks = [
   {
     name: "Elementi di anatomia",
     category: "illustration",
-    price: 1750,
+    price: 175000,
     artist: "Francesco Bertinatti and Mecco Leone.",
     image: imageUrl + "art-002.jpg",
     detail: "Elementi di anatomia by Francesco Bertinatti and Mecco Leone",
@@ -23,7 +23,7 @@ export const artworks = [
   {
     name: "Lithuanian Girl",
     category: "painting",
-    price: 900,
+    price: 90000,
     artist: "Kanutas Ruseckas",
     image: imageUrl + "art-003.jpg",
     detail: "Lithuanian Girl with Palm Sunday Fronds by Kanutas Ruseckas",
@@ -32,7 +32,7 @@ export const artworks = [
   {
     name: "infante of Spain",
     category: "painting",
-    price: 3750,
+    price: 375000,
     artist: "Rijksmuseum",
     image: imageUrl + "art-004.jpg",
     detail:
@@ -42,7 +42,7 @@ export const artworks = [
   {
     name: "King of the Netherlands",
     category: "painting",
-    price: 7500,
+    price: 150000,
     artist: "Rijksmuseum",
     image: imageUrl + "art-005.jpg",
     detail: "Portrait of William II, King of the Netherlands.",
@@ -51,7 +51,7 @@ export const artworks = [
   {
     name: "The war fairs",
     category: "painting",
-    price: 2500,
+    price: 210000,
     artist: "Giuseppe Cali",
     image: imageUrl + "art-006.jpg",
     detail: "Death of Dragut.",
@@ -60,7 +60,7 @@ export const artworks = [
   {
     name: "Drips",
     category: "abstract",
-    price: 2500,
+    price: 250000,
     artist: "Patty",
     image: imageUrl + "art-007.jpg",
     detail: "Liquid abstract.",
@@ -69,7 +69,7 @@ export const artworks = [
   {
     name: "Silhouette",
     category: "abstract",
-    price: 4300,
+    price: 200000,
     artist: "Rogers",
     image: imageUrl + "art-008.png",
     detail: "ineffable Silhouette",
@@ -78,7 +78,7 @@ export const artworks = [
   {
     name: "The Sky Diver’s Lament",
     category: "abstract",
-    price: 2550,
+    price: 230000,
     artist: "Gabriel",
     image: imageUrl + "art-009.jpg",
     detail:
@@ -88,7 +88,7 @@ export const artworks = [
   {
     name: "Visible Mask",
     category: "drawing",
-    price: 3500,
+    price: 350000,
     artist: "tp-h",
     image: imageUrl + "art-010.jpg",
     detail: "The mask that shows reflection",
@@ -97,7 +97,7 @@ export const artworks = [
   {
     name: "flower power",
     category: "abstract",
-    price: 1000,
+    price: 100000,
     artist: "Mendez",
     image: imageUrl + "art-011.jpg",
     detail: "Reflection of power",
@@ -106,7 +106,7 @@ export const artworks = [
   {
     name: "hitting the reds",
     category: "abstract",
-    price: 2300,
+    price: 230000,
     artist: "Mendez",
     image: imageUrl + "art-012.jpg",
     detail: "hitting the reds and coming through",
@@ -115,7 +115,7 @@ export const artworks = [
   {
     name: "Alternate",
     category: "abstract",
-    price: 4000,
+    price: 230000,
     artist: "Mendez",
     image: imageUrl + "art-013.jpg",
     detail: "Alternating through the world",
@@ -124,7 +124,7 @@ export const artworks = [
   {
     name: "Passing through",
     category: "abstract",
-    price: 3400,
+    price: 120000,
     artist: "Brian",
     image: imageUrl + "art-014.jpg",
     detail: "Passing through the glasses and lust",
@@ -133,7 +133,7 @@ export const artworks = [
   {
     name: "Cosmos",
     category: "drawing",
-    price: 4500,
+    price: 95000,
     artist: "Bygen",
     image: imageUrl + "art-015.jpg",
     detail: "Touch the cosmos, lose your shap, find your soul",
@@ -142,7 +142,7 @@ export const artworks = [
   {
     name: "fragile beauty",
     category: "illustration",
-    price: 600,
+    price: 310000,
     artist: "Vin",
     image: imageUrl + "art-016.jpg",
     detail: "fragile beauty",
@@ -151,7 +151,7 @@ export const artworks = [
   {
     name: "Giving",
     category: "drawing",
-    price: 3000,
+    price: 320000,
     artist: "Alex benedith",
     image: imageUrl + "art-017.jpg",
     detail: "giving what the world deserves",
@@ -160,7 +160,7 @@ export const artworks = [
   {
     name: "Burning desire",
     category: "drawing",
-    price: 2000,
+    price: 135000,
     artist: "chilliest",
     image: imageUrl + "art-018.jpg",
     detail: "Buring the world desire and looking through",
@@ -169,7 +169,7 @@ export const artworks = [
   {
     name: "Cloud",
     category: "digitalart",
-    price: 2000,
+    price: 140000,
     artist: "Ronald",
     image: imageUrl + "art-019.jpg",
     detail: "cloud and artificial",
@@ -178,7 +178,7 @@ export const artworks = [
   {
     name: "Touches",
     category: "drawing",
-    price: 1500,
+    price: 150000,
     artist: "Skilux",
     image: imageUrl + "art-020.jpg",
     detail: "Touching the aesthetics",
@@ -187,7 +187,7 @@ export const artworks = [
   {
     name: "light",
     category: "art",
-    price: 4000,
+    price: 240000,
     artist: "Ronald",
     image: imageUrl + "art-021.jpg",
     detail: "Where Light finds me",
@@ -196,7 +196,7 @@ export const artworks = [
   {
     name: "Dammed",
     category: "digitalart",
-    price: 2000,
+    price: 90000,
     artist: "Jenni Pasanen",
     image: imageUrl + "art-022.jpg",
     detail: "Dammed in a Dammed world",
@@ -205,7 +205,7 @@ export const artworks = [
   {
     name: "Icarus",
     category: "scultpure",
-    price: 2500,
+    price: 210000,
     artist: "Valya Narts",
     image: imageUrl + "art-023.jpg",
     detail: "Never regret thy fall, O icarus of the fearless flight",
@@ -214,7 +214,7 @@ export const artworks = [
   {
     name: "In and Out",
     category: "drawing",
-    price: 4255,
+    price: 256000,
     artist: "Dolce Paganne",
     image: imageUrl + "art-024.jpg",
     detail: "Let them in and out of the world",
@@ -223,7 +223,7 @@ export const artworks = [
   {
     name: "Oh, falling",
     category: "illustration",
-    price: 3000,
+    price: 110000,
     artist: "Kx_",
     image: imageUrl + "art-025.jpg",
     detail: "Falling in and through",
@@ -232,7 +232,7 @@ export const artworks = [
   {
     name: "Thrown",
     category: "drawing",
-    price: 2000,
+    price: 233000,
     artist: "Checksy",
     image: imageUrl + "art-026.jpg",
     detail: "Thrown by life to live",
@@ -241,7 +241,7 @@ export const artworks = [
   {
     name: "imaginary",
     category: "illustration",
-    price: 4000,
+    price: 230000,
     artist: "Blac",
     image: imageUrl + "art-027.jpg",
     detail: "Breaking the imaginary line",
@@ -250,7 +250,7 @@ export const artworks = [
   {
     name: "flair",
     category: "digitalart",
-    price: 3000,
+    price: 310000,
     artist: "footprint",
     image: imageUrl + "art-028.jpg",
     detail: "flair in the heart through natural view",
@@ -259,7 +259,7 @@ export const artworks = [
   {
     name: "Thoughts",
     category: "illustration",
-    price: 1200,
+    price: 210000,
     artist: "Blac",
     image: imageUrl + "art-029.jpg",
     detail: "The waving throughs",
@@ -268,7 +268,7 @@ export const artworks = [
   {
     name: "The red",
     category: "drawing",
-    price: 700,
+    price: 70000,
     artist: "Ronald",
     image: imageUrl + "art-030.jpg",
     detail: "Why is everything red?",
@@ -277,7 +277,7 @@ export const artworks = [
   {
     name: "Halves",
     category: "digitalart",
-    price: 700,
+    price: 85000,
     artist: "christoph",
     image: imageUrl + "art-031.jpg",
     detail: "Looking the world through different patterns",
@@ -286,7 +286,7 @@ export const artworks = [
   {
     name: "Promise",
     category: "drawing",
-    price: 700,
+    price: 40000,
     artist: "Skilux",
     image: imageUrl + "art-032.jpg",
     detail: "I promise You",
@@ -295,7 +295,7 @@ export const artworks = [
   {
     name: "Tranquility",
     category: "painting",
-    price: 3200,
+    price: 60000,
     artist: "Andrii Frolov",
     image: imageUrl + "art-033.jpg",
     detail: "Living Tranquility",
@@ -304,7 +304,7 @@ export const artworks = [
   {
     name: "Toni Demuro",
     category: "painting",
-    price: 3200,
+    price: 100000,
     artist: "Marysia",
     image: imageUrl + "art-034.jpg",
     detail: "Toni Demuro",
@@ -313,7 +313,7 @@ export const artworks = [
   {
     name: "Home coming",
     category: "painting",
-    price: 2000,
+    price: 120000,
     artist: "Aesthetica",
     image: imageUrl + "art-035.jpg",
     detail: "A place to come back to",

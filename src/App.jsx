@@ -12,6 +12,7 @@ import Product from "./pages/Product";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import RareArtwork from "./pages/RareArtwork";
 import SignUp from "./pages/SignUp";
+import Success from "./pages/Success";
 import ScrollToTop from "./ui/scrollToTop";
 import ProtectedRoute from "./ui/ProtectedRoute";
 const queryClient = new QueryClient({
@@ -37,6 +38,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/success" element={<Success />} />
           <Route
             path="/checkout"
             element={
@@ -56,7 +58,7 @@ function App() {
             duration: 1000,
           },
           error: {
-            duration: 4000,
+            duration: 2000,
           },
           style: {
             fontSize: "16px",

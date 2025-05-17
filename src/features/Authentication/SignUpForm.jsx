@@ -3,7 +3,7 @@ import { FaXmark } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoGithub } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
-import SearchLoading from "../../ui/SearchLoading";
+import { ClipLoader } from "react-spinners";
 import { useSignUp } from "./useSignUp";
 function SignUpForm() {
   const navigate = useNavigate();
@@ -86,7 +86,11 @@ function SignUpForm() {
                 disabled={isLoading}
                 className="w-full rounded bg-[#000] py-2 text-center uppercase text-white"
               >
-                {!isLoading ? "Sign up" : <SearchLoading />}
+                {!isLoading ? (
+                  "Sign up"
+                ) : (
+                  <ClipLoader color="#fff" size="1.3rem" />
+                )}
               </button>
             </div>
             <div className="mt-4 w-full">

@@ -24,10 +24,13 @@ const cartSlice = createSlice({
       state.items = state.items.filter((art) => art.id !== deletedItem);
       toast.success(`${inCart.name} removed from cart`);
     },
+    clearCart() {
+      return initialState;
+    },
   },
 });
 
-export const { addArtwork, deleteArtwork } = cartSlice.actions;
+export const { addArtwork, deleteArtwork, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
 export const getCart = (state) => state.cart.items;
 export const getTotalPrice = (state) =>

@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import SearchLoading from "./SearchLoading";
+import { ClipLoader } from "react-spinners";
 function SearchResultsMobile({ searchResults, isLoading }) {
-  if (isLoading) return <SearchLoading />;
+  if (isLoading)
+    return (
+      <span className="flex items-center justify-center">
+        <ClipLoader color="black" />
+      </span>
+    );
   return (
     <div className="mt-5 grid grid-cols-2 gap-4">
       {searchResults.map((result) => (

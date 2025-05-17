@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 import { useCurrentUser } from "./useCurrentUser";
 import { useLogout } from "./useLogout";
-import SearchLoading from "../../ui/SearchLoading";
 function AuthButton() {
   const { isAuthenticated } = useCurrentUser();
   const { logout, isLoading } = useLogout();
@@ -11,7 +11,7 @@ function AuthButton() {
         onClick={logout}
         className="w-full flex-grow rounded bg-[#000] py-2 text-center text-base font-normal uppercase text-white"
       >
-        {!isLoading ? "Log out" : <SearchLoading />}
+        {!isLoading ? "Log out" : <ClipLoader color="#fff" size="1.3rem" />}
       </button>
     );
   return (

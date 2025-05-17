@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import { PaystackButton } from "react-paystack";
 import { useCurrentUser } from "../Authentication/useCurrentUser";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 const publicKey = import.meta.env.VITE_PAYSTACK_KEY;
 function Paystack({ amount }) {
+  const navigate = useNavigate();
   const { userData = {} } = useCurrentUser();
   const { email, firstName, phone } = userData;
   const name = firstName;
@@ -14,10 +17,14 @@ function Paystack({ amount }) {
       phone,
     },
     publicKey,
-    text: "Pay Now",
-    onSuccess: () =>
-      alert("Thanks for doing business with us! Come back soon!!"),
-    onClose: () => alert("Wait! Don't leave :("),
+    text: "Proceed",
+    onSuccess: () => {
+      navigate("/success");
+    },
+
+    onClose: () => {
+      toast.error("PAYMENT CANCELED");
+    },
   };
 
   return (
