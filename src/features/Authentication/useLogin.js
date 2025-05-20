@@ -8,7 +8,8 @@ export function useLogin() {
   const queryClient = useQueryClient();
   const { mutate: login, isLoading } = useMutation({
     mutationKey: ["login"],
-    mutationFn: ({ email, password }) => loginApi({ email, password }),
+    // mutationFn: ({ email, password }) => loginApi({ email, password }),
+    mutationFn: loginApi,
     onSuccess: (user) => {
       queryClient.setQueryData(["user"], user.user);
       navigate("/checkout", { replace: true });

@@ -53,18 +53,22 @@ export async function getRealtedArtworks(id, category) {
     .neq("id", id)
     .limit(4);
 
-  if (error) {
-    throw new Error("There was Error Getting ReatedArtworks");
-  }
+  if (error) throw new Error("There was Error Getting ReatedArtworks");
   return data;
 }
 
 //Getting all the Featured
 export async function getFeatured() {
   const { data, error } = await supabase.from("artworks").select("*");
-  if (error) {
-    console.error(error);
-    throw new Error("There was an error get the artworks");
-  }
+  if (error) throw new Error("There was an error getting the artworks");
+
+  return data;
+}
+
+//Get all artist
+export async function getAllArtist() {
+  const { data, error } = await supabase.from("artworks").select("artist, id");
+
+  if (error) throw new Error("There was an error getting the artist");
   return data;
 }

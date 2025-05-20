@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { useSearchParams } from "react-router-dom";
 import { PAGE_SIZE } from "../utils/helpers";
-/* eslint-disable react/prop-types */
 function Pagination({ count }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = !searchParams.get("page")
@@ -12,11 +12,19 @@ function Pagination({ count }) {
     const next = currentPage === pageCount ? currentPage : currentPage + 1;
     searchParams.set("page", next);
     setSearchParams(searchParams);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
   function prevPage() {
     const prev = currentPage === 1 ? currentPage : currentPage - 1;
     searchParams.set("page", prev);
     setSearchParams(searchParams);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
   return (
     <div className="app-container mt-10 flex items-center justify-between">

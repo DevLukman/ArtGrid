@@ -11,7 +11,6 @@ function FeaturedOne() {
       <div className="app-container">
         <div className="w-full text-center">
           <h1 className="mb-4 text-3xl font-semibold uppercase">
-            {" "}
             Pixel & Patina
           </h1>
           <p>
