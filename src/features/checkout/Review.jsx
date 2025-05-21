@@ -9,7 +9,9 @@ function Review() {
   return (
     <div className="w-full rounded bg-[#fafafa] px-4 py-4">
       <div className="flex w-full items-center justify-between">
-        <h1 className="mb-4 text-xl md:text-2xl">Review Items and shipping</h1>
+        <h1 className="mb-4 text-base font-normal md:text-2xl">
+          Review Items and shipping
+        </h1>
         <button onClick={() => setIsOpen((isOpen) => !isOpen)}>
           {isOpen ? (
             <IoIosArrowUp size="1.5rem" />

@@ -42,7 +42,9 @@ function DeliveryInformationForm() {
   return (
     <div className="mt-8 rounded bg-[#fafafa] px-4 py-4">
       <div className="flex w-full items-center justify-between">
-        <h2 className="mb-4 text-xl md:text-2xl">Shipping Address</h2>
+        <h2 className="mb-4 text-base font-normal md:text-2xl">
+          Shipping address
+        </h2>
         <button onClick={() => setIsOpen((c) => !c)}>
           {isOpen ? (
             <IoIosArrowUp size="1.5rem" />

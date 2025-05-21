@@ -4,7 +4,6 @@ const filterCategory = [
   { id: 3, category: "digital art", set: "", htmlFor: "digitalart" },
   { id: 4, category: "drawing", set: "", htmlFor: "drawing" },
   { id: 5, category: "illustration", set: "", htmlFor: "illustration" },
-  { id: 6, category: "photograhpy", set: "", htmlFor: "photography" },
   { id: 7, category: "painting", set: "", htmlFor: "painting" },
   { id: 8, category: "scultpure", set: "", htmlFor: "scultpure" },
 ];

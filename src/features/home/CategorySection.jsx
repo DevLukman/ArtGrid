@@ -19,15 +19,8 @@ const categoryContent = [
     id: 3,
     image:
       "https://eldglheibpfcfzpjfxbh.supabase.co/storage/v1/object/public/artgrid-image//illustrationmain.jpg",
-    query: "/product?category=illustraction",
+    query: "/product?category=illustration",
     tag: "Illustration",
-  },
-  {
-    id: 4,
-    image:
-      "https://eldglheibpfcfzpjfxbh.supabase.co/storage/v1/object/public/artgrid-image//photographymain.jpg",
-    query: "/product?category=photography",
-    tag: "Photography",
   },
   {
     id: 5,

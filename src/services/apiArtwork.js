@@ -1,8 +1,14 @@
 import supabase from "./supabase";
 import { PAGE_SIZE } from "../utils/helpers";
 //Getting all the artworks
-export async function getArtworks({ page }) {
+export async function getArtworks({ page, filter }) {
   let query = supabase.from("artworks").select("*", { count: "exact" });
+
+  //Filter
+  if (filter) query = query[filter.method || "eq"](filter.field, filter.value);
+  // if (filter) query = query.eq(filter.field, filter.value);
+
+  //Pagination
   if (page) {
     const from = (page - 1) * PAGE_SIZE;
     const to = from + PAGE_SIZE - 1;
