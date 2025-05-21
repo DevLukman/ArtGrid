@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import cartReducer from "./features/cart/cartSlice";
+import cartSlice from "./features/cart/cartSlice";
 import { loadState, saveState } from "./utils/helpers";
 
 const preloadedState = {
@@ -10,7 +10,7 @@ const preloadedState = {
 
 const store = configureStore({
   reducer: {
-    cart: cartReducer,
+    cart: cartSlice,
   },
   preloadedState,
 });
