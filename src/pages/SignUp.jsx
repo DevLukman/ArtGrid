@@ -1,4 +1,4 @@
-import SignUpForm from "../features/Authentication/SignUpForm";
+import SignUpForm from "../features/authentication/SignUpForm";
 function SignUp() {
   return (
     <>

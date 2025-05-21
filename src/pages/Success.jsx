@@ -2,10 +2,10 @@ import confetti from "canvas-confetti";
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useCurrentUser } from "../features/Authentication/useCurrentUser";
+import { useCurrentUser } from "../features/authentication/useCurrentUser";
 import { clearCart, getCart, getTotalPrice } from "../features/cart/cartSlice";
 import { downloadReceiptPDF } from "../utils/helpers";
-import Receipt from "../features/Checkout/Receipt";
+import Receipt from "../features/checkout/Receipt";
 function Success() {
   const receiptRef = useRef();
   const [loading, setLoading] = useState(false);

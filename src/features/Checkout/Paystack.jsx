@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { PaystackButton } from "react-paystack";
-import { useCurrentUser } from "../Authentication/useCurrentUser";
+import { useCurrentUser } from "../authentication/useCurrentUser";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 const publicKey = import.meta.env.VITE_PAYSTACK_KEY;

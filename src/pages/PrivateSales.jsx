@@ -1,4 +1,4 @@
-import PrivateSalesList from "../features/PrivateSales/PrivateSalesList";
+import PrivateSalesList from "../features/privatesales/PrivateSalesList";
 import Footer from "../ui/Footer";
 import MobileNav from "../ui/MobileNav";
 import Nav from "../ui/Nav";

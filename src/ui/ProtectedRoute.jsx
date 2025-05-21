@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useCurrentUser } from "../features/Authentication/useCurrentUser";
+import { useCurrentUser } from "../features/authentication/useCurrentUser";
 import { useEffect } from "react";
 import Loading from "../ui/Loading";
 /* eslint-disable react/prop-types */

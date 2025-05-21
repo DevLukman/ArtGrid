@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { ClipLoader } from "react-spinners";
-import { useCurrentUser } from "../Authentication/useCurrentUser";
+import { useCurrentUser } from "../authentication/useCurrentUser";
 import useLoggedInUserInformation from "./useLoggedInUserInformation";
 import useUpdateLoggedInUserInformation from "./useUpdateLoggedInUserInformation";
 import { useCreateInformation } from "./useCreateInformation";

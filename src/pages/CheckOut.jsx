@@ -1,4 +1,4 @@
-import CheckOuts from "../features/Checkout/CheckOuts";
+import CheckOuts from "../features/checkout/CheckOuts";
 import Footer from "../ui/Footer";
 import MobileNav from "../ui/MobileNav";
 import Nav from "../ui/Nav";

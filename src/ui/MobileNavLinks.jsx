@@ -7,7 +7,7 @@ import {
   FaXTwitter,
   FaYoutube,
 } from "react-icons/fa6";
-import AuthButton from "../features/Authentication/AuthButton";
+import AuthButton from "../features/authentication/AuthButton";
 const navLinks = [
   { id: 1, name: "Home", to: "/" },
   { id: 2, name: "Explore", to: "/product" },
