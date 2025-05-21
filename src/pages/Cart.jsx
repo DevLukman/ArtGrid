@@ -1,4 +1,4 @@
-import CartList from "../features/Cart/CartList";
+import CartList from "../features/cart/CartList";
 import Footer from "../ui/Footer";
 import MobileNav from "../ui/MobileNav";
 import Nav from "../ui/Nav";
