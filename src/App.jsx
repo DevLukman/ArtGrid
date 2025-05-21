@@ -14,7 +14,7 @@ import RareArtwork from "./pages/RareArtwork";
 import SignUp from "./pages/SignUp";
 import Success from "./pages/Success";
 import ProtectedRoute from "./ui/ProtectedRoute";
-import ScrollToTop from "./ui/scrollToTop";
+import ScrollToTop from "./ui/ScrollToTop";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
