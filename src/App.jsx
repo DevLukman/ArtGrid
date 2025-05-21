@@ -13,8 +13,8 @@ import ProductDetailsPage from "./pages/ProductDetailsPage";
 import RareArtwork from "./pages/RareArtwork";
 import SignUp from "./pages/SignUp";
 import Success from "./pages/Success";
-import ScrollToTop from "./ui/scrollToTop";
 import ProtectedRoute from "./ui/ProtectedRoute";
+import ScrollToTop from "./ui/scrollToTop";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {

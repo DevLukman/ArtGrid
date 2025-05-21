@@ -68,7 +68,7 @@ function CategorySection() {
           <div
             key={content.id}
             onClick={() => navigate(content.query)}
-            className="mt-4 h-[250px] max-w-[300px] cursor-pointer bg-cover p-1 transition-all duration-300 ease-in-out hover:scale-[1.01] md:h-[300px]"
+            className="mt-4 h-[180px] max-w-[300px] cursor-pointer bg-cover p-1 transition-all duration-300 ease-in-out hover:scale-[1.01] md:h-[300px]"
           >
             <img src={content.image} alt={content.tag} />
             <p className="mt-1 text-base uppercase">{content.tag}</p>

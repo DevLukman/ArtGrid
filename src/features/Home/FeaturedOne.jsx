@@ -29,15 +29,16 @@ function FeaturedOne() {
           <img
             src="https://eldglheibpfcfzpjfxbh.supabase.co/storage/v1/object/public/artworks//featured-1.jpg"
             alt="Pixel & Patina"
+            loading="lazy"
             className="h-[500px] w-full"
           />
         </div>
-        <div className="mt-[60px] grid w-full grid-cols-2 gap-6 gap-y-8 sm:grid-cols-4 sm:gap-8 lg:mt-[100px]">
+        <div className="mt-[60px] grid w-full grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-8 lg:mt-[100px]">
           {results.map((content) => (
             <Link
               key={content.id}
               to={`/detail/${content.id}`}
-              className="py-2 transition-all duration-300 ease-in-out hover:scale-[1.01]"
+              className="transition-all duration-300 ease-in-out hover:scale-[1.01]"
             >
               <img
                 src={content.image}

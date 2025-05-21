@@ -23,7 +23,7 @@ const ActiveTwo = (
     ></path>
   </svg>
 );
-// import Uploader from "../../data/Uploader";
+
 const ActiveFour = (
   <svg
     role="presentation"
@@ -74,7 +74,6 @@ function Products() {
 
   return (
     <>
-      {/* <Uploader /> */}
       <section className="w-full pb-16">
         <div className="app-container w-full pt-[100px]">
           <div className="flex w-full items-center justify-end gap-4">

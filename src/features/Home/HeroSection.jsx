@@ -4,9 +4,11 @@ function HeroSection() {
       <section className="relative h-screen w-full overflow-hidden">
         <div>
           <video
-            src="https://eldglheibpfcfzpjfxbh.supabase.co/storage/v1/object/public/artgrid-image//hero-1.mp4"
+            src="https://eldglheibpfcfzpjfxbh.supabase.co/storage/v1/object/public/artgrid-image/hero-1.mp4"
             width="100%"
             height="100%"
+            playsInline
+            preload="none"
             autoPlay
             loop
             muted

@@ -8,12 +8,6 @@ const filterCategory = [
   { id: 7, category: "painting", set: "", htmlFor: "painting" },
   { id: 8, category: "scultpure", set: "", htmlFor: "scultpure" },
 ];
-const SortBy = [
-  { id: 1, category: "lowest Price", set: "", htmlFor: "lowestPrice" },
-  { id: 2, category: "Highest Price", set: "", htmlFor: "highestPrice" },
-  { id: 3, category: "Recent", set: "", htmlFor: "recent" },
-  { id: 4, category: "Oldest", set: "", htmlFor: "oldest" },
-];
 
 /* eslint-disable react/prop-types */
 import { FaXmark } from "react-icons/fa6";
@@ -24,16 +18,11 @@ import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { useSearchParams } from "react-router-dom";
 function Filter({ setOpenFilter }) {
   const [cateOpen, setCateOpen] = useState(false);
-  const [sort, setSort] = useState(false);
   const closeRef = useOutsideClick(setOpenFilter);
   const [searchParams, setSearchParams] = useSearchParams();
 
   function handleFilter(value) {
     searchParams.set("category", value);
-    setSearchParams(searchParams);
-  }
-  function handleSortBy(value) {
-    searchParams.set("sortby", value);
     setSearchParams(searchParams);
   }
   function handleClear() {
@@ -67,7 +56,6 @@ function Filter({ setOpenFilter }) {
               className="flex cursor-pointer items-center justify-between"
               onClick={() => {
                 setCateOpen((c) => !c);
-                setSort(false);
               }}
             >
               <p>Cateory</p>
@@ -97,31 +85,9 @@ function Filter({ setOpenFilter }) {
             <div
               className="flex cursor-pointer items-center justify-between"
               onClick={() => {
-                setSort((c) => !c);
                 setCateOpen(false);
               }}
-            >
-              <p>SortBy</p>
-              {sort ? (
-                <IoIosArrowUp size="1.5rem" />
-              ) : (
-                <IoIosArrowDown size="1.5rem" />
-              )}
-            </div>
-            {sort &&
-              SortBy.map((category, id) => (
-                <div key={id} className="my-4 flex items-center gap-3">
-                  <input
-                    id={category.htmlFor}
-                    type="checkbox"
-                    className="h-[20px] w-[20px] cursor-pointer accent-gray-300"
-                    onClick={() => handleSortBy(category.htmlFor)}
-                  />
-                  <label className="cursor-pointer" htmlFor={category.htmlFor}>
-                    {category.category}
-                  </label>
-                </div>
-              ))}
+            ></div>
           </div>
           <div className="mt-4 flex items-center justify-center">
             <button

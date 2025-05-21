@@ -8,8 +8,8 @@ export const formatCurrency = (value) =>
 
 export function loadState() {
   try {
-    const serializedState = localStorage.getItem("cart");
-    return serializedState ? JSON.parse(serializedState) : undefined;
+    const itemfromLocalStorage = localStorage.getItem("cart");
+    return itemfromLocalStorage ? JSON.parse(itemfromLocalStorage) : undefined;
   } catch (err) {
     console.error("Could not load state from localStorage", err);
     return undefined;
@@ -18,8 +18,8 @@ export function loadState() {
 
 export function saveState(state) {
   try {
-    const serializedState = JSON.stringify(state);
-    localStorage.setItem("cart", serializedState);
+    const itemToLocalStorage = JSON.stringify(state);
+    localStorage.setItem("cart", itemToLocalStorage);
   } catch (err) {
     console.error("Could not save state to localStorage", err);
   }
