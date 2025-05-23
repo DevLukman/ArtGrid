@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { FaXmark } from "react-icons/fa6";
-import { FcGoogle } from "react-icons/fc";
-import { IoLogoGithub } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import { ClipLoader } from "react-spinners";
 import { useLogin } from "./useLogin";
@@ -59,17 +57,6 @@ function LoginForm() {
                     <ClipLoader color="#fff" size="1.3rem" />
                   )}
                 </button>
-              </div>
-              <div className="mt-6 w-full">
-                <h2 className="text-center font-extrabold">OR</h2>
-                <div className="mt-6 flex items-center justify-between gap-4">
-                  <button className="flex w-full items-center justify-center rounded border py-2">
-                    <FcGoogle />
-                  </button>
-                  <button className="flex w-full items-center justify-center rounded border py-2">
-                    <IoLogoGithub />
-                  </button>
-                </div>
               </div>
             </form>
             <div className="mt-6 flex w-full items-center justify-center gap-2">

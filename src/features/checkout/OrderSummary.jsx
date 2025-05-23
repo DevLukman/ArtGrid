@@ -5,8 +5,8 @@ import { formatCurrency } from "../../utils/helpers";
 
 function OrderSummary() {
   const totalPrice = useSelector(getTotalPrice);
-  const shippingCost = totalPrice * 0.1;
-  const taxes = totalPrice * 0.09;
+  const shippingCost = totalPrice * 0.04;
+  const taxes = totalPrice * 0.05;
   const amount = totalPrice + shippingCost + taxes;
   return (
     <div className="rounded bg-[#fafafa] px-5 py-4 font-medium">
