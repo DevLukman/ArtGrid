@@ -33,17 +33,17 @@ function Success() {
     <>
       <section className="app-container relative h-screen w-full">
         <div className="absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">
-          <h1 className="text-center text-3xl font-extrabold uppercase md:text-5xl">{`Thank you, ${firstName}!`}</h1>
+          <h1 className="text-center text-xl font-bold uppercase md:text-5xl">{`Thank you, ${firstName}!`}</h1>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 font-normal md:flex-row md:gap-8">
             <button
-              className="w-full rounded bg-black py-2 uppercase text-white"
+              className="w-full rounded bg-black px-2.5 py-2 uppercase text-white"
               onClick={handleDownload}
               disabled={loading}
             >
               {loading ? "Generating PDF..." : "Download Receipt"}
             </button>
             <button
-              className="w-full rounded bg-black py-2 uppercase text-white"
+              className="w-full rounded bg-black px-2.5 py-2 uppercase text-white"
               onClick={() => {
                 navigate("/product");
                 dispatch(clearCart());
