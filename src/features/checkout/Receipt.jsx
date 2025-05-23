@@ -39,7 +39,7 @@ const Receipt = React.forwardRef(
           </table>
 
           <p style={styles.total}>
-            <strong>Total:</strong> ${total}
+            <strong>Total:</strong> {formatCurrency(total)}
           </p>
         </div>
       </div>
