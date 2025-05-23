@@ -36,14 +36,14 @@ function Success() {
           <h1 className="text-center text-xl font-bold uppercase md:text-5xl">{`Thank you, ${firstName}!`}</h1>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 font-normal md:flex-row md:gap-8">
             <button
-              className="w-full rounded bg-black px-2.5 py-2 uppercase text-white"
+              className="w-full rounded bg-black px-3 py-2 text-xs uppercase text-white md:text-base"
               onClick={handleDownload}
               disabled={loading}
             >
               {loading ? "Generating PDF..." : "Download Receipt"}
             </button>
             <button
-              className="w-full rounded bg-black px-2.5 py-2 uppercase text-white"
+              className="w-full rounded bg-black px-3 py-2 text-xs uppercase text-white md:text-base"
               onClick={() => {
                 navigate("/product");
                 dispatch(clearCart());
